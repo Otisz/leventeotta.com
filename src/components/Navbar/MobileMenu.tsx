@@ -9,8 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
 import { useState } from "react";
@@ -37,9 +35,6 @@ export default function MobileMenu() {
         </SheetHeader>
         <div className="h-full space-y-8 overflow-auto pb-32">
           <div className="flex flex-col divide-y divide-accent">
-            <Link href="/about" className="p-8" onClick={() => setOpen(false)}>
-              About
-            </Link>
             <Link href="/contact" className="p-8" onClick={() => setOpen(false)}>
               Contact
             </Link>

@@ -9,17 +9,11 @@ export default function Navbar() {
     <nav className="flex h-20 divide-x divide-background bg-accent">
       <Link
         href="/"
-        className="mr-auto flex items-center text-nowrap px-8 text-2xl font-bold transition-all hover:text-orange-500 hover:underline hover:decoration-2 hover:underline-offset-8 active:translate-y-1 md:mr-0 lg:px-16"
+        className="text-1xl mr-auto flex items-center text-nowrap px-8 font-bold transition-all hover:text-orange-500 hover:underline hover:decoration-2 hover:underline-offset-8 active:translate-y-1 md:mr-0 md:text-2xl lg:px-16"
       >
         Levente Otta
       </Link>
       <div className="hidden flex-1 justify-center md:flex">
-        <Link
-          href="/about"
-          className="flex items-center px-8 transition-all hover:text-orange-500 hover:underline hover:decoration-2 hover:underline-offset-8 active:translate-y-1"
-        >
-          About
-        </Link>
         <Link
           href="/contact"
           className="flex items-center px-8 transition-all hover:text-orange-500 hover:underline hover:decoration-2 hover:underline-offset-8 active:translate-y-1"
