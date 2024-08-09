@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { FaLinkedin, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 export default function Page() {
   return (
