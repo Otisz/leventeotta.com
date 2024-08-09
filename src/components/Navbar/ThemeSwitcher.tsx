@@ -15,6 +15,7 @@ export default function ThemeSwitcher() {
             setTheme(theme === "light" ? "dark" : "light");
           }}
           className="flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1"
+          aria-label={theme === "light" ? "Too bright? Switch to dark mode" : "Too dark? Switch to light mode"}
         >
           {theme === "light" ? <FaRegSun /> : <FaRegMoon />}
         </TooltipTrigger>

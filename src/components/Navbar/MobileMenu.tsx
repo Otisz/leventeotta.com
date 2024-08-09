@@ -19,15 +19,23 @@ export default function MobileMenu() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1 md:hidden">
+      <SheetTrigger
+        className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1 md:hidden"
+        aria-label="Open navigation menu"
+      >
         <FaAlignRight className="h-8 w-8" />
       </SheetTrigger>
       <SheetContent noClose className="w-full border-none p-0">
         <SheetHeader className="flex h-20 flex-row divide-x divide-background bg-accent">
           <SheetTitle className="flex flex-1 items-center px-8 text-2xl font-bold">Menu</SheetTitle>
-          <SheetClose className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1">
+          <SheetClose
+            className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1"
+            aria-labelledby="close-navitaion-menu"
+          >
             <FaRegCircleXmark className="h-8 w-8" />
-            <span className="sr-only">Close</span>
+            <span className="sr-only" id="close-navitaion-menu">
+              Close navigation menu
+            </span>
           </SheetClose>
           <VisuallyHidden asChild>
             <SheetDescription className="hidden">Navigation menu</SheetDescription>
