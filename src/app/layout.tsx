@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background bg-[radial-gradient(theme(colors.accent.DEFAULT)_2px,_transparent_25%)] bg-[length:40px_40px] bg-fixed font-sans antialiased",
+          "min-h-screen bg-background bg-[radial-gradient(theme(colors.accent.DEFAULT)_2px,_transparent_25%)] bg-[length:40px_40px] bg-fixed font-sans text-[100%] antialiased",
           fontSans.variable,
         )}
       >
