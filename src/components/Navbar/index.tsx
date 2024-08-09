@@ -32,6 +32,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center px-4 transition-all active:translate-y-1"
+                aria-label="Check out my Github"
               >
                 <FaSquareGithub className="h-8 w-8" />
               </a>
@@ -49,6 +50,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center px-4 transition-all active:translate-y-1"
+                aria-label="Visit my LinkedIn"
               >
                 <FaLinkedin className="h-8 w-8" />
               </a>
@@ -66,6 +68,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center px-4 transition-all active:translate-y-1"
+                aria-label="Download my CV"
               >
                 <FaRegFilePdf className="h-8 w-8" />
               </a>

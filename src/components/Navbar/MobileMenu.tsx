@@ -43,7 +43,7 @@ export default function MobileMenu() {
         </SheetHeader>
         <div className="h-full space-y-8 overflow-auto pb-32">
           <div className="flex flex-col divide-y divide-accent">
-            <Link href="/contact" className="p-8" onClick={() => setOpen(false)}>
+            <Link href="/contact" className="p-8" onClick={() => setOpen(false)} aria-label="Go to contact page">
               Contact
             </Link>
           </div>
@@ -53,6 +53,7 @@ export default function MobileMenu() {
               target="_blank"
               rel="noreferrer"
               className="col-span-2 inline-flex flex-1 items-center justify-center gap-4 rounded-lg border-2 border-orange-500 p-8"
+              aria-label="Download my CV"
             >
               <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
               <span>Download CV</span>
@@ -62,6 +63,7 @@ export default function MobileMenu() {
               target="_blank"
               rel="noreferrer"
               className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border p-8"
+              aria-label="Check out my Github"
             >
               <FaSquareGithub className="h-8 w-8" />
             </a>
@@ -70,6 +72,7 @@ export default function MobileMenu() {
               target="_blank"
               rel="noreferrer"
               className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border p-8"
+              aria-label="Visit my LinkedIn"
             >
               <FaLinkedin className="h-8 w-8" />
             </a>

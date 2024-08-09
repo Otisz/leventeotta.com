@@ -22,6 +22,7 @@ export default function Page() {
           target="_blank"
           rel="noreferrer"
           className="inline-flex flex-1 items-center justify-center gap-4 rounded-lg border-2 border-border bg-background p-8 transition-colors hover:border-orange-500"
+          aria-label="Download my CV"
         >
           <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
           <span>Download CV</span>
@@ -36,6 +37,7 @@ export default function Page() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border bg-background p-8 transition-colors hover:border-orange-500"
+            aria-label="Check out my Github"
           >
             <FaSquareGithub className="h-8 w-8" />
           </a>
@@ -44,6 +46,7 @@ export default function Page() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border bg-background p-8 transition-colors hover:border-orange-500"
+            aria-label="Visit my LinkedIn"
           >
             <FaLinkedin className="h-8 w-8" />
           </a>
