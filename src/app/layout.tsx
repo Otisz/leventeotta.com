@@ -1,12 +1,10 @@
 import "./globals.css";
-import tailwindConfig from "@/../tailwind.config";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { ReactNode } from "react";
-import resolveConfig from "tailwindcss/resolveConfig";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,10 +24,6 @@ type Props = Readonly<{
 }>;
 
 export default function RootLayout({ children }: Props) {
-  const fullConfig = resolveConfig(tailwindConfig);
-
-  console.log(fullConfig.theme.colors.accent);
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
