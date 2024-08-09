@@ -1,10 +1,12 @@
 import "./globals.css";
+import tailwindConfig from "@/../tailwind.config";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { ReactNode } from "react";
+import resolveConfig from "tailwindcss/resolveConfig";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,9 +26,18 @@ type Props = Readonly<{
 }>;
 
 export default function RootLayout({ children }: Props) {
+  const fullConfig = resolveConfig(tailwindConfig);
+
+  console.log(fullConfig.theme.colors.accent);
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+      <body
+        className={cn(
+          "min-h-screen bg-background bg-[radial-gradient(theme(colors.accent.DEFAULT)_2px,_transparent_25%)] bg-[length:40px_40px] bg-[position:-19px_-19px] font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
         <Providers>
           <Navbar />
           {children}
