@@ -50,7 +50,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background min-h-screen bg-[radial-gradient(theme(colors.accent.DEFAULT)_2px,_transparent_25%)] bg-[length:40px_40px] bg-fixed font-sans text-[100%] antialiased",
+          "min-h-screen bg-background bg-[repeating-radial-gradient(circle_at_0_0,transparent_0,theme(colors.background)_10px),repeating-linear-gradient(theme(colors.accent.DEFAULT),theme(colors.accent.DEFAULT))] bg-fixed font-sans text-[100%] antialiased",
           fontSans.variable,
         )}
       >
