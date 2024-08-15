@@ -2,10 +2,29 @@
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useTheme } from "next-themes";
-import { FaRegMoon, FaRegSun, FaSquareGithub } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import { FaCircleDot, FaRegMoon, FaRegSun } from "react-icons/fa6";
 
 export default function ThemeSwitcher() {
   const { setTheme, theme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div
+        className="flex aspect-square h-full cursor-wait items-center justify-center"
+        aria-label="Loading theme switcher"
+        title="Loading theme switcher"
+      >
+        <FaCircleDot className="h-4 w-4 animate-pulse fill-muted-foreground" />
+      </div>
+    );
+  }
 
   return (
     <TooltipProvider>
