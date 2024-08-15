@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     default: "Levente Otta's portfolio",
     template: "%s | Levente Otta's portfolio",
   },
-  description: "Check out Levente Otta's portfolio who is a software engineer and a web developer for almost 10 years.",
+  description:
+    "Explore the portfolio of Levente Otta, a Senior Software Engineer specializing in building scalable, secure, and performant backend and frontend applications in Laravel and NextJs.",
   keywords: [
     "software engineer",
     "web developer",
