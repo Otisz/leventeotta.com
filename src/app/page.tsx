@@ -1,4 +1,5 @@
 import MeImage from "@/assets/images/me_small.jpeg";
+import { TimeLine, TimeLineItem } from "@/features/home/timeline";
 import Image from "next/image";
 import { FaRegFilePdf } from "react-icons/fa6";
 
@@ -45,36 +46,89 @@ export default function Home() {
       <section className="space-y-4">
         <h2 className="text-2xl font-bold">My journey with web development</h2>
 
-        <ol className="relative border-s border-border">
-          <li className="mb-10 ms-4">
-            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-            <time className="mb-1 text-sm font-normal leading-none">July 2020 - Present</time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Fullstack developer at TMRW Applications Ltd.
-            </h3>
-          </li>
-          <li className="mb-10 ms-4">
-            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-            <time className="mb-1 text-sm font-normal leading-none">January 2020 - June 2020</time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Fullstack developer at Designatives Kft.
-            </h3>
-          </li>
-          <li className="mb-10 ms-4">
-            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-            <time className="mb-1 text-sm font-normal leading-none">June 2018 - November 2019</time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Fullstack developer at Codebuild Kft.
-            </h3>
-          </li>
-          <li className="mb-10 ms-4">
-            <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-            <time className="mb-1 text-sm font-normal leading-none">May 2017 - April 2018</time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Fullstack developer at Unioffice Kft.
-            </h3>
-          </li>
-        </ol>
+        <TimeLine>
+          <TimeLineItem
+            dateFrom="July 2020"
+            dateTo="Present"
+            position="Fullstack developer"
+            company="TMRW Applications Ltd."
+            technologies={[
+              "Laravel",
+              "Yii2",
+              "MySQL",
+              "PostgreSQL",
+              "VueJS",
+              "NuxtJS",
+              "ReactJS",
+              "NextJS",
+              "TailwindCSS",
+              "Bootstrap",
+              "Vercel",
+              "Amazon",
+              "Nginx",
+              "GitHub Actions",
+            ]}
+          >
+            <ul className="max-w-[80ch] list-inside list-disc leading-loose">
+              <li>
+                TMRW is in the business of smart hotels which aims to bring every aspect of your reservations into a
+                single mobile app - we also created the company’s own PMS and integrated the app with many others.
+                <ul className="list-inside list-[circle] ps-5">
+                  <li>
+                    NTAK.guru is a standalone multi-tenant application which can be integrated into multiple PMS
+                    applications and receive, build and send reports to the Hungarian government (NTAK and VIZA).
+                  </li>
+                  <li>
+                    Utilizing queues, team-based permissions; Users have abilities to view, modify and resend reports.
+                  </li>
+                </ul>
+              </li>
+              <li>It was mostly my responsibility to host the applications and build the CI/CD.</li>
+              <li>
+                Collaborated with other developers (frontend, backend and mobile) and also I was responsible for
+                reviewing other’s Pull Requests.
+              </li>
+            </ul>
+          </TimeLineItem>
+          <TimeLineItem
+            dateFrom="January 2020"
+            dateTo="June 2020"
+            position="Fullstack developer"
+            company="Designatives Kft."
+            technologies={["Laravel", "MySQL", "VueJS", "Hetzner"]}
+          >
+            <ul className="max-w-[80ch] list-inside list-disc leading-loose">
+              <li>I worked on Swisscare (insurance) as a backend developer.</li>
+              <li>I worked on Able donations (donation service) as a full stack developer.</li>
+            </ul>
+          </TimeLineItem>
+          <TimeLineItem
+            dateFrom="June 2018"
+            dateTo="November 2019"
+            position="Fullstack developer"
+            company="Codebuild Kft."
+            technologies={["Laravel", "MySQL", "VueJS", "Google Cloud Platform", "Digital Ocean"]}
+          >
+            <ul className="max-w-[80ch] list-inside list-disc leading-loose">
+              <li>
+                I worked on internal CRM/ERP application for Korda Filmstúdió, internal CRM application for Budapest
+                Sportarena and private social platform for KéK Group as backend developer.
+              </li>
+              <li>I worked on Collectorism (item exchange) as Project owner and full stack developer.</li>
+            </ul>
+          </TimeLineItem>
+          <TimeLineItem
+            dateFrom="May 2017"
+            dateTo="April 2018"
+            position="Fullstack developer"
+            company="Unioffice Kft."
+            technologies={["PHP", "CodeIgniter", "MySQL", "Bootstrap"]}
+          >
+            <ul className="max-w-[80ch] list-inside list-disc leading-loose">
+              <li>I developed an event management system for Oriflame with IBM Lotus Notes integration.</li>
+            </ul>
+          </TimeLineItem>
+        </TimeLine>
       </section>
     </main>
   );
