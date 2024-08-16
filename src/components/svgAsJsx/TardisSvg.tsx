@@ -1692,6 +1692,23 @@ export function TardisSvg(props: SVGProps<SVGSVGElement>) {
           transform="translate(0 845)"
         />
         <path
+          d="M310.936-824.626h48.709v58.049h-48.709z"
+          className="opacity-0 blur-xl transition-all group-hover:animate-pulse group-hover:fill-yellow-500 group-hover:opacity-100"
+          style={{
+            color: "#000",
+            fillOpacity: 1,
+            fillRule: "nonzero",
+            stroke: "none",
+            strokeWidth: 0.1,
+            marker: "none",
+            visibility: "visible",
+            display: "inline",
+            overflow: "visible",
+            enableBackground: "accumulate",
+          }}
+          transform="translate(0 845)"
+        />
+        <path
           d="m329.625-787.313 30.281-1.375v-2.5l-30.281 1.375L311-790.876v2.5zM329.625-806.313l30.281-1.375v-2.5l-30.281 1.375L311-809.875v2.5z"
           style={{
             color: "#000",
