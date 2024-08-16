@@ -1,32 +1,45 @@
+import MeImage from "@/assets/images/me_small.jpeg";
+import Image from "next/image";
 import { FaRegFilePdf } from "react-icons/fa6";
 
 export default function Home() {
   return (
     <main className="container space-y-16 px-8 py-24 md:px-24 lg:px-32">
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold">Hello There!</h1>
+      <section className="flex gap-8">
+        <div className="flex-1 space-y-4">
+          <h1 className="text-4xl font-bold">Hello there! 👋</h1>
 
-        <p>
-          My name is <span className="text-orange-500">Levente &quot;Otisz&quot; Otta</span> from Hungary.
-        </p>
+          <p>
+            My name is <span className="text-orange-500">Levente &quot;Otisz&quot; Otta</span> from Hungary.
+          </p>
 
-        <p>I&apos;m a software engineer and a web developer for almost 10 years.</p>
+          <p>I&apos;m a software engineer and a web developer for almost 10 years.</p>
 
-        <p>I specialized on high availability, scalable and performant CRM, ERP and PMS systems.</p>
+          <p>I specialized on high availability, scalable and performant CRM, ERP and PMS systems.</p>
 
-        <p>For backend I&apos;m using PHP: Laravel and for the frontend I&apos;m using React: NextJS.</p>
+          <p>For backend I&apos;m using PHP: Laravel and for the frontend I&apos;m using React: NextJS.</p>
 
-        <p>Also I have experience with CI/CD, DevOps and Hosting.</p>
+          <p>Also I have experience with CI/CD, DevOps and Hosting.</p>
 
-        <a
-          href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex flex-1 items-center justify-center gap-4 rounded-lg border-2 border-border bg-background p-8 transition-colors hover:border-orange-500"
-        >
-          <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
-          <span>Download CV</span>
-        </a>
+          <a
+            href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex flex-1 items-center justify-center gap-4 rounded-lg border-2 border-border bg-background p-8 transition-colors hover:border-orange-500"
+          >
+            <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
+            <span>Download CV</span>
+          </a>
+        </div>
+        <div className="relative hidden w-1/3 self-stretch md:flex md:justify-center">
+          <Image
+            src={MeImage}
+            alt="Levente Otta"
+            style={{ objectFit: "cover", width: "auto", height: "auto" }}
+            className="rounded-lg object-top shadow-[0_0_0_theme(width.2)_#000000,0_0_0_theme(width.3)_theme(colors.orange.500)]"
+            priority
+          />
+        </div>
       </section>
 
       <section className="space-y-4">
