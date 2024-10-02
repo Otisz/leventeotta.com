@@ -49,7 +49,7 @@ export default function Home() {
         <TimeLine>
           <TimeLineItem
             dateFrom="July 2020"
-            dateTo="Present"
+            dateTo="September 2024"
             position="Fullstack developer"
             company="TMRW Applications Ltd."
             technologies={[
