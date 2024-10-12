@@ -5,6 +5,9 @@ const config: Config = {
   content: ["./src/app/**/*.{ts,tsx,mdx}", "./src/components/**/*.{ts,tsx,mdx}"],
   theme: {
     extend: {
+      container: {
+        center: true,
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
