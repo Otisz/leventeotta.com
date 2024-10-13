@@ -6,7 +6,7 @@ import { FaAlignRight, FaLinkedin, FaRegFilePdf, FaSquareGithub } from "react-ic
 
 export default function Navbar() {
   return (
-    <nav className="m-4 flex h-20 items-center gap-2 md:gap-6 lg:gap-8">
+    <nav className="container mt-4 flex h-20 items-center gap-2 md:gap-6 lg:gap-8">
       <Link
         href="/"
         className="border-border bg-accent/30 hover:bg-accent inline-flex h-full items-center rounded-xl border-2 px-4 text-center text-2xl font-bold transition-all hover:border-orange-500 md:px-8 lg:px-16"
