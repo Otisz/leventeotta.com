@@ -51,7 +51,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-background bg-[radial-gradient(theme(colors.accent.DEFAULT)_2px,transparent_1.55px),radial-gradient(theme(colors.accent.DEFAULT)_2px,theme(colors.background)_2px)] bg-[size:62px_62px] bg-[0_0,31px_31px] font-sans antialiased ${inter.variable}`}
+        className={`bg-background bg-[image:radial-gradient(theme(colors.zinc.400)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.400)_1.1px,theme(colors.background)_1.1px)] bg-[size:44px_44px] bg-[0_0,22px_22px] font-sans antialiased dark:bg-[image:radial-gradient(theme(colors.zinc.600)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.600)_1.1px,theme(colors.background)_1.1px)] ${inter.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Navbar />
