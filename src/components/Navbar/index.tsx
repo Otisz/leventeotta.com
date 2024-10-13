@@ -2,7 +2,7 @@ import MobileMenu from "@/components/Navbar/mobile-menu";
 import ThemeSwitcherButton from "@/components/Navbar/theme-switcher-button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { FaAlignRight, FaLinkedin, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
+import { FaLinkedin, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
 
 export default function Navbar() {
   return (

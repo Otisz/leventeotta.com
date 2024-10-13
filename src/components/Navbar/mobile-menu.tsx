@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import Link from "next/link";
 import { useState } from "react";
 import { FaAlignRight, FaLinkedin, FaRegCircleXmark, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
 
