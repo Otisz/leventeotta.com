@@ -114,8 +114,10 @@ export default function HeadingSection() {
         </p>
       </div>
       <div className="prose dark:prose-invert border-border bg-accent/30 prose-a:text-orange-500 col-span-full max-w-none text-balance rounded-xl border-2 p-4">
-        <h2>Other technologies</h2>
-        <div className="flex flex-wrap justify-between gap-4">
+        <h2>
+          Other technologies <small className="text-muted-foreground inline md:hidden">(scrollable)</small>
+        </h2>
+        <div className="flex flex-nowrap justify-between gap-4 overflow-x-auto text-nowrap md:flex-wrap">
           <div className="inline-flex items-center gap-4">
             <SiHtml5 className="inline-block text-2xl" />
             <span>HTML</span>
