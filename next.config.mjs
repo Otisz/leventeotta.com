@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    TOOLTIP_DELAY_DURATION: "150",
+  experimental: {
+    reactCompiler: true,
   },
-  swcMinify: true,
   typescript: {
     ignoreBuildErrors: true,
   },

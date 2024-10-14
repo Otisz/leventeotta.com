@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import Link from "next/link";
 import { useState } from "react";
 import { FaAlignRight, FaLinkedin, FaRegCircleXmark, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
 
@@ -20,16 +19,16 @@ export default function MobileMenu() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger
-        className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1 md:hidden"
+        className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center justify-self-end rounded-xl border-2 transition-all hover:border-orange-500 md:hidden"
         aria-label="Open navigation menu"
       >
         <FaAlignRight className="h-8 w-8" />
       </SheetTrigger>
       <SheetContent noClose className="w-full border-none p-0">
-        <SheetHeader className="flex h-20 flex-row divide-x divide-background bg-accent">
+        <SheetHeader className="divide-background m-4 flex h-20 flex-row divide-x">
           <SheetTitle className="flex flex-1 items-center px-8 text-2xl font-bold">Menu</SheetTitle>
           <SheetClose
-            className="inline-flex aspect-square h-full items-center justify-center transition-all hover:text-orange-500 active:translate-y-1"
+            className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 transition-all hover:border-orange-500"
             aria-labelledby="close-navitaion-menu"
           >
             <FaRegCircleXmark className="h-8 w-8" />
@@ -42,11 +41,7 @@ export default function MobileMenu() {
           </VisuallyHidden>
         </SheetHeader>
         <div className="h-full space-y-8 overflow-auto pb-32">
-          <div className="flex flex-col divide-y divide-accent">
-            <Link href="/contact" className="p-8" onClick={() => setOpen(false)} aria-label="Go to contact page">
-              Contact
-            </Link>
-          </div>
+          <div className="divide-accent flex flex-col divide-y"></div>
           <div className="grid grid-cols-2 gap-4 px-8">
             <a
               href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
@@ -62,7 +57,7 @@ export default function MobileMenu() {
               href="https://github.com/Otisz"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border p-8"
+              className="border-border inline-flex flex-1 items-center justify-center rounded-lg border-2 p-8"
               aria-label="Check out my Github"
             >
               <FaSquareGithub className="h-8 w-8" />
@@ -71,7 +66,7 @@ export default function MobileMenu() {
               href="https://www.linkedin.com/in/leventeotta/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex flex-1 items-center justify-center rounded-lg border-2 border-border p-8"
+              className="border-border inline-flex flex-1 items-center justify-center rounded-lg border-2 p-8"
               aria-label="Visit my LinkedIn"
             >
               <FaLinkedin className="h-8 w-8" />

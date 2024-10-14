@@ -1,15 +1,10 @@
-import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/providers/theme-provider";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-import { ReactNode } from "react";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -46,19 +41,22 @@ type Props = Readonly<{
   children: ReactNode;
 }>;
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen bg-background bg-[repeating-radial-gradient(circle_at_0_0,transparent_0,theme(colors.background)_10px),repeating-linear-gradient(theme(colors.accent.DEFAULT),theme(colors.accent.DEFAULT))] bg-fixed font-sans antialiased",
-          fontSans.variable,
-        )}
+        className={`bg-background bg-[image:radial-gradient(theme(colors.zinc.400)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.400)_1.1px,theme(colors.background)_1.1px)] bg-[size:44px_44px] bg-[0_0,22px_22px] font-sans antialiased dark:bg-[image:radial-gradient(theme(colors.zinc.600)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.600)_1.1px,theme(colors.background)_1.1px)] ${inter.variable}`}
       >
-        <Providers>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <Navbar />
           {children}
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
