@@ -1,4 +1,4 @@
-import HeadingSection from "@/feature/Home/HeadingSection";
+import HeadingSection from "@/feature/Home/heading-section";
 import MyJourneySection from "@/feature/Home/my-jouney-section";
 
 export default function Home() {

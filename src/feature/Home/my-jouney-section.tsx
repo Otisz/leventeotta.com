@@ -2,13 +2,13 @@ import { FaRegFilePdf } from "react-icons/fa6";
 
 export default function MyJourneySection() {
   return (
-    <section className="prose dark:prose-invert bg-accent/30 prose-a:text-orange-500 border-border max-w-none text-balance rounded-xl border-2 p-4 2xl:col-span-2">
+    <section className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
       <h2>My journey</h2>
 
-      <ol className="border-border relative list-none border-s">
+      <ol className="relative list-none border-s border-border">
         <li className="-ms-4 mb-10 md:ms-4">
-          <div className="border-border absolute -start-2 mt-1 h-4 w-4 animate-ping rounded-full border bg-orange-500"></div>
-          <div className="border-border absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-orange-500"></div>
+          <div className="absolute -start-2 mt-1 h-4 w-4 animate-ping rounded-full border border-border bg-orange-500"></div>
+          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">
             <h3 className="mt-0">Looking for a new job</h3>
             <span className="text-foreground">
@@ -20,14 +20,14 @@ export default function MyJourneySection() {
             href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
             target="_blank"
             rel="noreferrer"
-            className="not-prose border-border bg-accent/30 inline-flex flex-1 items-center justify-center gap-4 rounded-xl border-2 p-8 transition-colors hover:border-orange-500"
+            className="not-prose inline-flex flex-1 items-center justify-center gap-4 rounded-xl border-2 border-border bg-accent/30 p-8 transition-colors hover:border-orange-500"
           >
             <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
             <span>Download CV</span>
           </a>
         </li>
         <li className="-ms-4 mb-10 md:ms-4">
-          <div className="border-border absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-orange-500"></div>
+          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">
             <h3 className="mt-0">
               Full-Stack developer <small className="text-muted-foreground">at TMRW Applications Ltd.</small>
@@ -59,7 +59,7 @@ export default function MyJourneySection() {
           </ul>
         </li>
         <li className="-ms-4 mb-10 md:ms-4">
-          <div className="border-border absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-orange-500"></div>
+          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">
             <h3 className="mt-0">
               Full-Stack developer <small className="text-muted-foreground">at Designatives Kft.</small>
@@ -75,7 +75,7 @@ export default function MyJourneySection() {
           </ul>
         </li>
         <li className="-ms-4 mb-10 md:ms-4">
-          <div className="border-border absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-orange-500"></div>
+          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">
             <h3 className="mt-0">
               Full-Stack developer <small className="text-muted-foreground">at Codebuild Kft.</small>
@@ -94,10 +94,10 @@ export default function MyJourneySection() {
           </ul>
         </li>
         <li className="-ms-4 mb-10 md:ms-4">
-          <div className="border-border absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-orange-500"></div>
+          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">
             <h3 className="mt-0">
-              Full-Stack developer <small className="text-muted-foreground">at Unioffice Kft.</small>
+              Web developer <small className="text-muted-foreground">at Unioffice Kft.</small>
             </h3>
             <span className="text-foreground">
               <time>May 2017</time> - <time>April 2018</time>

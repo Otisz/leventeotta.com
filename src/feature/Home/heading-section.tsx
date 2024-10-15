@@ -2,26 +2,20 @@ import MeImage from "@/assets/images/me_small.jpeg";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Image from "next/image";
 import { IconType } from "react-icons";
-import { DiYii } from "react-icons/di";
 import { FaAws, FaLocationDot } from "react-icons/fa6";
 import {
   SiBootstrap,
-  SiCodeigniter,
   SiCss3,
-  SiDigitalocean,
   SiGit,
   SiGithub,
   SiGithubactions,
-  SiGooglecloud,
   SiHtml5,
   SiJavascript,
   SiLaravel,
-  SiLinux,
   SiMysql,
   SiNextdotjs,
   SiNginx,
   SiPhp,
-  SiPostgresql,
   SiReact,
   SiSqlite,
   SiTailwindcss,
@@ -33,7 +27,7 @@ import {
 export default function HeadingSection() {
   return (
     <section className="grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 2xl:grid-cols-8 2xl:grid-rows-2">
-      <div className="prose dark:prose-invert border-border bg-accent/30 max-w-none rounded-xl border-2 p-4 md:col-span-3 lg:col-span-2 2xl:col-span-6">
+      <div className="prose max-w-none rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert md:col-span-3 lg:col-span-2 2xl:col-span-6">
         <h1 className="text-balance">
           Hello! 👋 My name is <span className="text-orange-500">Levente &quot;Otisz&quot; Otta</span>.
         </h1>
@@ -84,7 +78,7 @@ export default function HeadingSection() {
           priority
         />
       </div>
-      <div className="prose dark:prose-invert bg-accent/30 prose-a:text-orange-500 max-w-none text-balance rounded-xl border-2 border-[#f05340] p-4 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#f05340] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>Backend</h2>
         <p>
           For backend I chose <TechnologyLink icon={SiPhp} href="https://php.net" text="PHP" /> and the{" "}
@@ -92,7 +86,7 @@ export default function HeadingSection() {
         </p>
         <p>I&apos;m open to learn NodeJS and Elixir.</p>
       </div>
-      <div className="prose dark:prose-invert bg-accent/30 prose-a:text-orange-500 max-w-none text-balance rounded-xl border-2 border-[#61dbfb] p-4 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#61dbfb] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>Frontend</h2>
         <p>
           Primarily I&apos;m using <TechnologyLink icon={SiReact} href="https://react.dev" text="React" /> and{" "}
@@ -103,7 +97,7 @@ export default function HeadingSection() {
           it.
         </p>
       </div>
-      <div className="prose dark:prose-invert bg-accent/30 prose-a:text-orange-500 max-w-none text-balance rounded-xl border-2 border-[#31aff6] p-4 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#31aff6] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>UI</h2>
         <p>
           My go-to UI framework is{" "}
@@ -113,11 +107,9 @@ export default function HeadingSection() {
           Before that I used <TechnologyLink icon={SiBootstrap} href="https://getbootstrap.com" text="Bootstrap" />.
         </p>
       </div>
-      <div className="prose dark:prose-invert border-border bg-accent/30 prose-a:text-orange-500 col-span-full max-w-none text-balance rounded-xl border-2 p-4">
-        <h2>
-          Other technologies <small className="text-muted-foreground inline md:hidden">(scrollable)</small>
-        </h2>
-        <div className="flex flex-nowrap justify-between gap-4 overflow-x-auto text-nowrap md:flex-wrap">
+      <div className="prose col-span-full max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500">
+        <h2>Other technologies</h2>
+        <div className="flex flex-wrap justify-between gap-4 text-nowrap">
           <div className="inline-flex items-center gap-4">
             <SiHtml5 className="inline-block text-2xl" />
             <span>HTML</span>
@@ -151,14 +143,6 @@ export default function HeadingSection() {
             <span>AWS</span>
           </div>
           <div className="inline-flex items-center gap-4">
-            <SiGooglecloud className="inline-block text-2xl" />
-            <span>GCP</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiDigitalocean className="inline-block text-2xl" />
-            <span>Digital Ocean</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
             <SiVercel className="inline-block text-2xl" />
             <span>Vercel</span>
           </div>
@@ -167,24 +151,8 @@ export default function HeadingSection() {
             <span>MySQL</span>
           </div>
           <div className="inline-flex items-center gap-4">
-            <SiPostgresql className="inline-block text-2xl" />
-            <span>PostgreSQL</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
             <SiSqlite className="inline-block text-2xl" />
             <span>SQLite</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiCodeigniter className="inline-block text-2xl" />
-            <span>Code Igniter</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <DiYii className="inline-block text-2xl" />
-            <span>Yii2</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiLinux className="inline-block text-2xl" />
-            <span>Linux</span>
           </div>
           <div className="inline-flex items-center gap-4">
             <SiNginx className="inline-block text-2xl" />
