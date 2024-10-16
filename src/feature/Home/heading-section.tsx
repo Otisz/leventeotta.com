@@ -35,7 +35,13 @@ export default function HeadingSection() {
           <FaLocationDot className="inline-block" />
           <span>Budapest, Hungary.</span>
         </p>
-        <p>I&apos;m a Full-Stack web developer for almost 10 years.</p>
+        <p>
+          I&apos;m a{" "}
+          <span className="dark:bg-gradient-to-r dark:from-[#f05340] dark:via-[#61dbfb] dark:to-[#31aff6] dark:bg-clip-text dark:text-transparent">
+            Full-Stack web developer
+          </span>{" "}
+          for almost 10 years.
+        </p>
         <p>
           I specialized on high availability, scalable and performant{" "}
           <Popover>
