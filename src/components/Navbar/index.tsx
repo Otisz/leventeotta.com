@@ -2,14 +2,15 @@ import MobileMenu from "@/components/Navbar/mobile-menu";
 import ThemeSwitcherButton from "@/components/Navbar/theme-switcher-button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { FaLinkedin, FaRegFilePdf, FaSquareGithub } from "react-icons/fa6";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function Navbar() {
   return (
     <nav className="container mt-4 flex h-20 items-center gap-2 md:gap-6 lg:gap-8">
       <Link
         href="/"
-        className="border-border bg-accent/30 hover:bg-accent inline-flex h-full items-center rounded-xl border-2 px-4 text-center text-2xl font-bold transition-all hover:border-orange-500 md:px-8 lg:px-16"
+        className="inline-flex h-full items-center rounded-xl border-2 border-border bg-accent/30 px-4 text-center text-2xl font-bold transition-all hover:border-orange-500 hover:bg-accent md:px-8 lg:px-16"
       >
         Levente Otta
       </Link>
@@ -23,10 +24,10 @@ export default function Navbar() {
                 href="https://github.com/Otisz"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 transition-all hover:border-orange-500"
+                className="inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:border-orange-500 hover:bg-accent"
                 aria-label="Check out my Github"
               >
-                <FaSquareGithub className="h-8 w-8" />
+                <SiGithub className="h-8 w-8" />
               </a>
             </TooltipTrigger>
             <TooltipContent>
@@ -41,10 +42,10 @@ export default function Navbar() {
                 href="https://www.linkedin.com/in/leventeotta/"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 transition-all hover:border-orange-500"
+                className="inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:border-orange-500 hover:bg-accent"
                 aria-label="Visit my LinkedIn"
               >
-                <FaLinkedin className="h-8 w-8" />
+                <SiLinkedin className="h-8 w-8" />
               </a>
             </TooltipTrigger>
             <TooltipContent>
@@ -59,7 +60,7 @@ export default function Navbar() {
                 href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 transition-all hover:border-orange-500"
+                className="inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:border-orange-500 hover:bg-accent"
                 aria-label="Download my CV"
               >
                 <FaRegFilePdf className="h-8 w-8" />
