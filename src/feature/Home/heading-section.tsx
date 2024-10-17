@@ -4,7 +4,6 @@ import Image from "next/image";
 import { IconType } from "react-icons";
 import { FaAws, FaLocationDot } from "react-icons/fa6";
 import {
-  SiBootstrap,
   SiGithub,
   SiGithubactions,
   SiLaravel,
@@ -17,7 +16,6 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVercel,
-  SiVuedotjs,
 } from "react-icons/si";
 
 export default function HeadingSection() {
@@ -88,10 +86,7 @@ export default function HeadingSection() {
           Primarily I&apos;m using <TechnologyLink icon={SiReact} href="https://react.dev" text="React" /> and{" "}
           <TechnologyLink icon={SiNextdotjs} href="https://nextjs.org" text="NextJS" />.
         </p>
-        <p>
-          I also know <TechnologyLink icon={SiVuedotjs} href="https://vuejs.org" text="VueJS" /> but I&apos;m not fan of
-          it.
-        </p>
+        <p>I also know VueJS.</p>
       </div>
       <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>UI</h2>
@@ -99,9 +94,7 @@ export default function HeadingSection() {
           My go-to UI framework is{" "}
           <TechnologyLink icon={SiTailwindcss} href="https://tailwindcss.com" text="TailwindCSS" />.
         </p>
-        <p>
-          Before that I used <TechnologyLink icon={SiBootstrap} href="https://getbootstrap.com" text="Bootstrap" />.
-        </p>
+        <p>Before that I used Bootstrap.</p>
       </div>
       <div className="prose col-span-full max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500">
         <h2>Other technologies</h2>
