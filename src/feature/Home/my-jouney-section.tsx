@@ -11,7 +11,8 @@ export default function MyJourneySection() {
               Full-Stack developer <small className="text-muted-foreground">at TMRW Applications Ltd.</small>
             </h3>
             <span className="text-foreground">
-              <time>July 2020</time> - <time>September 2024</time>
+              <time>July 2020</time> - <time>September 2024</time>{" "}
+              <span className="text-muted-foreground">• 4 yrs 3 mos</span>
             </span>
           </div>
 
@@ -43,7 +44,7 @@ export default function MyJourneySection() {
               Full-Stack developer <small className="text-muted-foreground">at Designatives Kft.</small>
             </h3>
             <span className="text-foreground">
-              <time>January 2020</time> - <time>June 2020</time>
+              <time>January 2020</time> - <time>June 2020</time> <span className="text-muted-foreground">• 6 mos</span>
             </span>
           </div>
 
@@ -59,7 +60,8 @@ export default function MyJourneySection() {
               Full-Stack developer <small className="text-muted-foreground">at Codebuild Kft.</small>
             </h3>
             <span className="text-foreground">
-              <time>June 2018</time> - <time>November 2019</time>
+              <time>June 2018</time> - <time>November 2019</time>{" "}
+              <span className="text-muted-foreground">• 1 yr 6 mos</span>
             </span>
           </div>
 
@@ -78,7 +80,7 @@ export default function MyJourneySection() {
               Web developer <small className="text-muted-foreground">at Unioffice Kft.</small>
             </h3>
             <span className="text-foreground">
-              <time>May 2017</time> - <time>April 2018</time>
+              <time>May 2017</time> - <time>April 2018</time> <span className="text-muted-foreground">• 1 yr</span>
             </span>
           </div>
 
