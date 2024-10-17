@@ -1,31 +1,9 @@
-import { FaRegFilePdf } from "react-icons/fa6";
-
 export default function MyJourneySection() {
   return (
     <section className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
       <h2>My journey</h2>
 
       <ol className="relative list-none border-s border-border">
-        <li className="-ms-4 mb-10 md:ms-4">
-          <div className="absolute -start-2 mt-1 h-4 w-4 animate-ping rounded-full border border-border bg-orange-500"></div>
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-          <div className="flex flex-col items-baseline justify-between md:flex-row">
-            <h3 className="mt-0">Looking for a new job</h3>
-            <span className="text-foreground">
-              <time>October 2024</time> - <time>Present</time>
-            </span>
-          </div>
-
-          <a
-            href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="not-prose inline-flex flex-1 items-center justify-center gap-4 rounded-xl border-2 border-border bg-accent/30 p-8 transition-colors hover:border-orange-500"
-          >
-            <FaRegFilePdf className="h-6 w-6 fill-orange-500" />
-            <span>Download CV</span>
-          </a>
-        </li>
         <li className="-ms-4 mb-10 md:ms-4">
           <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
           <div className="flex flex-col items-baseline justify-between md:flex-row">

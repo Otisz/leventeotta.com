@@ -5,12 +5,8 @@ import { IconType } from "react-icons";
 import { FaAws, FaLocationDot } from "react-icons/fa6";
 import {
   SiBootstrap,
-  SiCss3,
-  SiGit,
   SiGithub,
   SiGithubactions,
-  SiHtml5,
-  SiJavascript,
   SiLaravel,
   SiMysql,
   SiNextdotjs,
@@ -35,13 +31,7 @@ export default function HeadingSection() {
           <FaLocationDot className="inline-block" />
           <span>Budapest, Hungary.</span>
         </p>
-        <p>
-          I&apos;m a{" "}
-          <span className="dark:bg-gradient-to-r dark:from-[#f05340] dark:via-[#61dbfb] dark:to-[#31aff6] dark:bg-clip-text dark:text-transparent">
-            Full-Stack web developer
-          </span>{" "}
-          for almost 10 years.
-        </p>
+        <p>I have been a Full-Stack web developer for almost 10 years.</p>
         <p>
           I specialized on high availability, scalable and performant{" "}
           <Popover>
@@ -76,15 +66,15 @@ export default function HeadingSection() {
           applications.
         </p>
       </div>
-      <div className="relative hidden h-full rounded-xl border-2 border-orange-500 lg:block 2xl:col-span-2 2xl:row-span-2">
+      <div className="relative hidden h-full rounded-xl border-2 border-border lg:block 2xl:col-span-2 2xl:row-span-2">
         <Image
           src={MeImage}
           alt="Levente Otta"
-          className="mx-auto h-full w-auto rounded-xl object-cover object-top"
+          className="object-to mx-auto h-full w-auto rounded-xl object-cover"
           priority
         />
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#f05340] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>Backend</h2>
         <p>
           For backend I chose <TechnologyLink icon={SiPhp} href="https://php.net" text="PHP" /> and the{" "}
@@ -92,7 +82,7 @@ export default function HeadingSection() {
         </p>
         <p>I&apos;m open to learn NodeJS and Elixir.</p>
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#61dbfb] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>Frontend</h2>
         <p>
           Primarily I&apos;m using <TechnologyLink icon={SiReact} href="https://react.dev" text="React" /> and{" "}
@@ -103,7 +93,7 @@ export default function HeadingSection() {
           it.
         </p>
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-[#31aff6] bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
         <h2>UI</h2>
         <p>
           My go-to UI framework is{" "}
@@ -117,24 +107,8 @@ export default function HeadingSection() {
         <h2>Other technologies</h2>
         <div className="flex flex-wrap justify-between gap-4 text-nowrap">
           <div className="inline-flex items-center gap-4">
-            <SiHtml5 className="inline-block text-2xl" />
-            <span>HTML</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiCss3 className="inline-block text-2xl" />
-            <span>CSS</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiJavascript className="inline-block text-2xl" />
-            <span>Javascript</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
             <SiTypescript className="inline-block text-2xl" />
             <span>Typescript</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiGit className="inline-block text-2xl" />
-            <span>Git</span>
           </div>
           <div className="inline-flex items-center gap-4">
             <SiGithub className="inline-block text-2xl" />
