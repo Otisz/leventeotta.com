@@ -1,7 +1,6 @@
 "use client";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaCircleDot, FaRegMoon, FaRegSun } from "react-icons/fa6";
@@ -18,11 +17,11 @@ export default function ThemeSwitcherButton() {
   if (!mounted) {
     return (
       <div
-        className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full cursor-wait items-center justify-center rounded-xl border-2 transition-all"
+        className="inline-flex aspect-square h-full cursor-wait items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:bg-accent"
         aria-label="Loading theme switcher"
         title="Loading theme switcher"
       >
-        <FaCircleDot className="fill-muted-foreground h-4 w-4 animate-pulse" />
+        <FaCircleDot className="h-4 w-4 animate-pulse fill-muted-foreground" />
       </div>
     );
   }
@@ -34,32 +33,10 @@ export default function ThemeSwitcherButton() {
           onClick={() => {
             setTheme(theme === "light" ? "dark" : "light");
           }}
-          className="bg-accent/30 hover:bg-accent border-border inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 transition-all hover:border-orange-500"
+          className="inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:border-orange-500 hover:bg-accent"
           aria-label={theme === "light" ? "Too bright? Switch to dark mode" : "Too dark? Switch to light mode"}
         >
-          <AnimatePresence mode="wait">
-            {theme === "light" ? (
-              <motion.div
-                key="sun"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.15 }}
-              >
-                <FaRegSun />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="moon"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.15 }}
-              >
-                <FaRegMoon />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {theme === "light" ? <FaRegSun className="h-4 w-4" /> : <FaRegMoon className="h-4 w-4" />}
         </TooltipTrigger>
         <TooltipContent>
           {theme === "light" ? <p>Too bright? Switch to dark mode</p> : <p>Too dark? Switch to light mode</p>}
