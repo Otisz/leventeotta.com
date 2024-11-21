@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { cn } from "@/lib/utils";
+import Captiwate from "@/components/captiwate";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
@@ -57,6 +57,7 @@ export default function RootLayout({ children }: Props) {
           <Navbar />
           {children}
         </ThemeProvider>
+        <Captiwate />
       </body>
     </html>
   );
