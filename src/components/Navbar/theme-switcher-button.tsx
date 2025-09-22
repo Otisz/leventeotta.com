@@ -1,9 +1,9 @@
 "use client";
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { FaCircleDot, FaRegMoon, FaRegSun } from "react-icons/fa6";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function ThemeSwitcherButton() {
   const { setTheme, theme } = useTheme();
@@ -18,7 +18,6 @@ export default function ThemeSwitcherButton() {
     return (
       <div
         className="inline-flex aspect-square h-full cursor-wait items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:bg-accent"
-        aria-label="Loading theme switcher"
         title="Loading theme switcher"
       >
         <FaCircleDot className="h-4 w-4 animate-pulse fill-muted-foreground" />

@@ -1,93 +1,35 @@
+import { DateTime } from "luxon";
+import { journeyData } from "@/data";
+import { elapsedTime } from "@/utils";
+
 export default function MyJourneySection() {
   return (
-    <section className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+    <section className="prose dark:prose-invert max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 prose-a:text-orange-500 2xl:col-span-2">
       <h2>My journey</h2>
 
-      <ol className="relative list-none border-s border-border">
-        <li className="-ms-4 mb-10 md:ms-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-          <div className="flex flex-col items-baseline justify-between md:flex-row">
-            <h3 className="mt-0">
-              Full-Stack developer <small className="text-muted-foreground">at TMRW Applications Ltd.</small>
-            </h3>
-            <span className="text-foreground">
-              <time>July 2020</time> - <time>September 2024</time>{" "}
-              <span className="text-muted-foreground">• 4 yrs 3 mos</span>
-            </span>
-          </div>
+      <ol className="relative list-none border-border border-s">
+        {journeyData.map((journey) => (
+          <li className="-ms-4 mb-10 md:ms-4" key={journey.company}>
+            <div className="-start-1.5 absolute mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
+            <div className="flex flex-col items-baseline justify-between md:flex-row">
+              <h3 className="mt-0">
+                {journey.role} <small className="text-muted-foreground">at {journey.company}</small>
+              </h3>
+              <div className="flex flex-col items-end">
+                <span className="text-foreground">
+                  <time>{journey.from.toFormat("LLLL yyyy")}</time> -{" "}
+                  {journey.to ? <time>{journey.to.toFormat("LLLL yyyy")}</time> : <span>Present</span>}{" "}
+                  <span className="text-muted-foreground">
+                    • {elapsedTime(journey.from, journey.to?.plus({ month: 1 }) ?? DateTime.now().plus({ month: 1 }))}
+                  </span>
+                </span>
+                <span className="text-muted-foreground text-sm">{journey.location}</span>
+              </div>
+            </div>
 
-          <ul className="list-disc leading-loose">
-            <li>
-              TMRW is in the business of smart hotels which aims to bring every aspect of your reservations into a
-              single mobile app - we also created the company’s own PMS and integrated the app with many others.
-              <ul className="list-inside list-[circle] ps-5">
-                <li>
-                  NTAK.guru is a standalone multi-tenant application which can be integrated into multiple PMS
-                  applications and receive, build and send reports to the Hungarian government (NTAK and VIZA).
-                </li>
-                <li>
-                  Utilizing queues, team-based permissions; Users have abilities to view, modify and resend reports.
-                </li>
-              </ul>
-            </li>
-            <li>It was mostly my responsibility to host the applications and build the CI/CD.</li>
-            <li>
-              Collaborated with other developers (frontend, backend and mobile) and also I was responsible for reviewing
-              other’s Pull Requests.
-            </li>
-          </ul>
-        </li>
-        <li className="-ms-4 mb-10 md:ms-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-          <div className="flex flex-col items-baseline justify-between md:flex-row">
-            <h3 className="mt-0">
-              Full-Stack developer <small className="text-muted-foreground">at Designatives Kft.</small>
-            </h3>
-            <span className="text-foreground">
-              <time>January 2020</time> - <time>June 2020</time> <span className="text-muted-foreground">• 6 mos</span>
-            </span>
-          </div>
-
-          <ul className="list-disc leading-loose">
-            <li>I worked on Swisscare (insurance) as a backend developer.</li>
-            <li>I worked on Able donations (donation service) as a full stack developer.</li>
-          </ul>
-        </li>
-        <li className="-ms-4 mb-10 md:ms-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-          <div className="flex flex-col items-baseline justify-between md:flex-row">
-            <h3 className="mt-0">
-              Full-Stack developer <small className="text-muted-foreground">at Codebuild Kft.</small>
-            </h3>
-            <span className="text-foreground">
-              <time>June 2018</time> - <time>November 2019</time>{" "}
-              <span className="text-muted-foreground">• 1 yr 6 mos</span>
-            </span>
-          </div>
-
-          <ul className="list-disc leading-loose">
-            <li>
-              I worked on internal CRM/ERP application for Korda Filmstúdió, internal CRM application for Budapest
-              Sportarena and private social platform for KéK Group as backend developer.
-            </li>
-            <li>I worked on Collectorism (item exchange) as Project owner and full stack developer.</li>
-          </ul>
-        </li>
-        <li className="-ms-4 mb-10 md:ms-4">
-          <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-border bg-orange-500"></div>
-          <div className="flex flex-col items-baseline justify-between md:flex-row">
-            <h3 className="mt-0">
-              Web developer <small className="text-muted-foreground">at Unioffice Kft.</small>
-            </h3>
-            <span className="text-foreground">
-              <time>May 2017</time> - <time>April 2018</time> <span className="text-muted-foreground">• 1 yr</span>
-            </span>
-          </div>
-
-          <ul className="list-disc leading-loose">
-            <li>I developed an event management system for Oriflame with IBM Lotus Notes integration.</li>
-          </ul>
-        </li>
+            {journey.description}
+          </li>
+        ))}
       </ol>
     </section>
   );

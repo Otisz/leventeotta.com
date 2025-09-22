@@ -1,5 +1,4 @@
-import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 export function TardisSvg(props: SVGProps<SVGSVGElement>) {
   return (
@@ -10,6 +9,7 @@ export function TardisSvg(props: SVGProps<SVGSVGElement>) {
       fill="none"
       {...props}
     >
+      <title>Tardis</title>
       <defs>
         <linearGradient id="f">
           <stop

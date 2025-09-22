@@ -1,6 +1,6 @@
-import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { ImageResponse } from "next/og";
 
 export const alt =
   "Explore the portfolio of Levente Otta, a Senior Software Engineer specializing in building scalable, secure, and performant backend and frontend applications in Laravel and NextJs.";
@@ -13,42 +13,40 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  const meImageData = await readFile(join(process.cwd(), "src/assets/images/me.png"));
-  const meImageSrc = Uint8Array.from(meImageData).buffer;
+  const meImageData = await readFile(join(process.cwd(), "src/assets/images/me.png"), "base64");
+  const meImageSrc = `data:image/png;base64,${meImageData}`;
 
   const greatVibesFontData = await readFile(join(process.cwd(), "src/assets/fonts/GreatVibes-Regular.ttf"));
   const greatVibesFont = Uint8Array.from(greatVibesFontData).buffer;
 
   return new ImageResponse(
-    (
-      <div
+    <div
+      style={{
+        fontSize: 96,
+        background: "#d8d8d8",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1rem",
+      }}
+    >
+      {/** biome-ignore lint/performance/noImgElement: This how OG images should be generated based on the doc */}
+      <img
+        src={meImageSrc}
+        alt={alt}
+        height="80%"
         style={{
-          fontSize: 96,
-          background: "#d8d8d8",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "1rem",
+          borderRadius: "0.5rem",
+          border: "5px solid #000000",
+          padding: "1rem",
+          fontFamily: "GreatVibes",
         }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={meImageSrc}
-          alt="Levente Otta"
-          height="80%"
-          style={{
-            borderRadius: "0.5rem",
-            border: "5px solid #000000",
-            padding: "1rem",
-            fontFamily: "GreatVibes",
-          }}
-          className="rounded-lg"
-        />
-        <p>Levente Otta</p>
-      </div>
-    ),
+        className="rounded-lg"
+      />
+      <p>Levente Otta</p>
+    </div>,
     {
       ...size,
       fonts: [

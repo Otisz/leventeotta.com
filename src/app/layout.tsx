@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Captiwate from "@/components/captiwate";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
@@ -51,13 +50,12 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-background bg-[image:radial-gradient(theme(colors.zinc.400)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.400)_1.1px,theme(colors.background)_1.1px)] bg-[size:44px_44px] bg-[0_0,22px_22px] font-sans antialiased dark:bg-[image:radial-gradient(theme(colors.zinc.700)_1.1px,transparent_1.1px),radial-gradient(theme(colors.zinc.700)_1.1px,theme(colors.background)_1.1px)] ${inter.variable}`}
+        className={`bg-[radial-gradient(var(--color-zinc-400)_1.1px,transparent_1.1px),radial-gradient(var(--color-zinc-400)_1.1px,var(--color-background)_1.1px)] bg-background bg-size-[0_0,22px_22px] bg-size-[44px_44px] font-sans antialiased dark:bg-[radial-gradient(var(--color-zinc-700)_1.1px,transparent_1.1px),radial-gradient(var(--color-zinc-700)_1.1px,var(--color-background)_1.1px)] ${inter.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Navbar />
           {children}
         </ThemeProvider>
-        <Captiwate />
       </body>
     </html>
   );

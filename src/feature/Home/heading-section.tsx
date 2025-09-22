@@ -1,27 +1,14 @@
+import Image from "next/image";
+import type { IconType } from "react-icons";
+import { FaLocationDot } from "react-icons/fa6";
+import { SiLaravel, SiNextdotjs, SiPhp, SiReact, SiTailwindcss } from "react-icons/si";
 import MeImage from "@/assets/images/me_small.jpeg";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import Image from "next/image";
-import { IconType } from "react-icons";
-import { FaAws, FaLocationDot } from "react-icons/fa6";
-import {
-  SiGithub,
-  SiGithubactions,
-  SiLaravel,
-  SiMysql,
-  SiNextdotjs,
-  SiNginx,
-  SiPhp,
-  SiReact,
-  SiSqlite,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-} from "react-icons/si";
 
 export default function HeadingSection() {
   return (
     <section className="grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 2xl:grid-cols-8 2xl:grid-rows-2">
-      <div className="prose max-w-none rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert md:col-span-3 lg:col-span-2 2xl:col-span-6">
+      <div className="prose dark:prose-invert max-w-none rounded-xl border-2 border-border bg-accent/30 p-4 md:col-span-3 lg:col-span-2 2xl:col-span-6">
         <h1 className="text-balance">
           Hello! 👋 My name is <span className="text-orange-500">Levente &quot;Otisz&quot; Otta</span>.
         </h1>
@@ -68,11 +55,11 @@ export default function HeadingSection() {
         <Image
           src={MeImage}
           alt="Levente Otta"
-          className="object-to mx-auto h-full w-auto rounded-xl object-cover"
+          className="mx-auto h-full w-auto rounded-xl object-cover object-to"
           priority
         />
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose dark:prose-invert max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 prose-a:text-orange-500 2xl:col-span-2">
         <h2>Backend</h2>
         <p>
           For backend I chose <TechnologyLink icon={SiPhp} href="https://php.net" text="PHP" /> and the{" "}
@@ -80,7 +67,7 @@ export default function HeadingSection() {
         </p>
         <p>I&apos;m open to learn NodeJS and Elixir.</p>
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose dark:prose-invert max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 prose-a:text-orange-500 2xl:col-span-2">
         <h2>Frontend</h2>
         <p>
           Primarily I&apos;m using <TechnologyLink icon={SiReact} href="https://react.dev" text="React" /> and{" "}
@@ -88,50 +75,13 @@ export default function HeadingSection() {
         </p>
         <p>I also know VueJS.</p>
       </div>
-      <div className="prose max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500 2xl:col-span-2">
+      <div className="prose dark:prose-invert max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 prose-a:text-orange-500 2xl:col-span-2">
         <h2>UI</h2>
         <p>
           My go-to UI framework is{" "}
           <TechnologyLink icon={SiTailwindcss} href="https://tailwindcss.com" text="TailwindCSS" />.
         </p>
         <p>Before that I used Bootstrap.</p>
-      </div>
-      <div className="prose col-span-full max-w-none text-balance rounded-xl border-2 border-border bg-accent/30 p-4 dark:prose-invert prose-a:text-orange-500">
-        <h2>Other technologies</h2>
-        <div className="flex flex-wrap justify-between gap-4 text-nowrap">
-          <div className="inline-flex items-center gap-4">
-            <SiTypescript className="inline-block text-2xl" />
-            <span>Typescript</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiGithub className="inline-block text-2xl" />
-            <span>GitHub</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiGithubactions className="inline-block text-2xl" />
-            <span>GitHub Actions</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <FaAws className="inline-block text-2xl" />
-            <span>AWS</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiVercel className="inline-block text-2xl" />
-            <span>Vercel</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiMysql className="inline-block text-2xl" />
-            <span>MySQL</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiSqlite className="inline-block text-2xl" />
-            <span>SQLite</span>
-          </div>
-          <div className="inline-flex items-center gap-4">
-            <SiNginx className="inline-block text-2xl" />
-            <span>Nginx</span>
-          </div>
-        </div>
       </div>
     </section>
   );
