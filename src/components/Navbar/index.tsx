@@ -49,7 +49,7 @@ export default function Navbar() {
           <Tooltip delayDuration={0}>
             <TooltipTrigger asChild>
               <a
-                href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
+                href="https://assets.leventeotta.com/documents/Levente Otta CV.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex aspect-square h-full items-center justify-center rounded-xl border-2 border-border bg-accent/30 transition-all hover:border-orange-500 hover:bg-accent"
