@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     "linkedin",
   ],
   metadataBase: new URL("https://leventeotta.com"),
+  openGraph: {
+    siteName: "Levente Otta's portfolio",
+    url: new URL("https://leventeotta.com"),
+  },
 };
 
 type Props = Readonly<{
