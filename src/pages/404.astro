@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/globals.css";
+---
+
+<Layout>
+  <main class="mx-auto max-w-6xl space-y-8 px-8 py-24 text-center">
+    <h1 class="text-4xl font-bold">Hello traveler!</h1>
+    <p>Looks like you have been lost in time and space.</p>
+    <p>Click on Tardis to return to the beginnings, and don't blink.</p>
+    <a href="/" class="group inline-flex items-center justify-center">
+      <!--<img src="/tardis.svg" alt="Tardis" class="h-64 w-auto" />-->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 -40 690 1040"
+        fill="none"
+        class="h-64 w-auto pt-2"
+      >
+        <title>Tardis</title>
+        <defs>
+          <linearGradient id="f">
+            <stop
+              offset="0"
+              style="stop-color:#434a52;stop-opacity:1"
+            />
+            <stop
+              offset="0.2"
+              style="stop-color:#59626f;stop-opacity:1"
+            />
+            <stop
+              offset="0.5"
+              style="stop-color:#bbc6d5;stop-opacity:1"
+            />
+            <stop
+              offset="0.79"
+              style="stop-color:#59626f;stop-opacity:1"
+            />
+            <stop
+              offset="1"
+              style="stop-color:#434a52;stop-opacity:1"
+            />
+          </linearGradient>
+          <linearGradient id="g">
+            <stop
+              offset="0"
+              style="stop-color:#020814;stop-opacity:1"
+            />
+            <stop
+              offset="1"
+              style="stop-color:#303d4e;stop-opacity:1"
+            />
+          </linearGradient>
+          <!-- ...rest of SVG definitions... -->
+        </defs>
+        <!-- ...SVG paths... -->
+      </svg>
+    </a>
+  </main>
+</Layout>

@@ -1,0 +1,86 @@
+---
+import Navbar from "../components/Navbar.astro";
+import PostHog from "../components/posthog.astro";
+
+interface Props {
+  description?: string;
+}
+
+const siteUrl = "https://leventeotta.com";
+const title = "Levente Otta - Full-Stack Web Developer";
+const description =
+  "Explore the portfolio of Levente Otta, a Senior Software Engineer specializing in building scalable, secure, and performant backend and frontend applications in Laravel and ReactJS.";
+const keywords = [
+  "software engineer",
+  "web developer",
+  "portfolio",
+  "levente otta",
+  "leventeotta",
+  "otisz",
+  "otta",
+  "web development",
+  "php",
+  "laravel",
+  "react",
+  "reactjs",
+  "tailwindcss",
+  "typescript",
+  "javascript",
+  "nodejs",
+  "git",
+  "github",
+  "linkedin",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <meta name="author" content="Levente Otta" />
+
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" type="image/png" href="/icon1.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/icon2.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/icon3.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/icon4.png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" sizes="512x512" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}/og-image.png`} />
+
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)" />
+
+    <link rel="canonical" href={siteUrl} />
+
+    <script is:inline>
+      const theme = localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      if (theme === "dark") document.documentElement.classList.add("dark");
+    </script>
+
+    <PostHog />
+  </head>
+  <body class="min-h-screen bg-neutral-50 text-neutral-900 antialiased py-8 dark:bg-neutral-900 dark:text-neutral-100">
+    <Navbar />
+    <slot />
+  </body>
+</html>

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false,
-    "includes": ["**"]
+    "ignoreUnknown": true,
+    "includes": ["**", "!!.claude", "!!CLAUDE.md"]
   },
   "formatter": {
     "enabled": true,
@@ -33,30 +33,23 @@
       }
     }
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "overrides": [
     {
-      "includes": ["src/**"],
+      "includes": ["**/*.astro"],
       "linter": {
         "rules": {
-          "correctness": {
-            "useUniqueElementIds": "off"
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
           },
-          "nursery": {
-            "useSortedClasses": {
-              "level": "info",
-              "fix": "safe",
-              "options": {}
-            }
-          }
-        }
-      }
-    },
-    {
-      "includes": ["src/styles/globals.css"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noUnknownAtRules": "off"
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
           }
         }
       }

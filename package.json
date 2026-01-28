@@ -1,39 +1,24 @@
 {
   "name": "leventeotta.com",
-  "version": "0.1.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@radix-ui/react-visually-hidden": "^1.2.3",
-    "@tailwindcss/postcss": "^4.1.13",
-    "@tailwindcss/typography": "^0.5.18",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.544.0",
+    "@iconify-json/lucide": "^1.2.87",
+    "@iconify-json/simple-icons": "^1.2.68",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.16",
+    "astro-icon": "^1.1.5",
     "luxon": "^3.7.2",
-    "next": "15.5.3",
-    "next-themes": "^0.4.6",
-    "postcss": "^8.5.6",
-    "posthog-js": "^1.267.0",
-    "posthog-node": "^5.8.6",
-    "radix-ui": "latest",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "react-icons": "^5.3.0",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.13",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
-    "@types/luxon": "^3.7.1",
-    "@types/node": "^22",
-    "@types/react": "19.1.13",
-    "@types/react-dom": "19.1.9",
-    "typescript": "^5.9.2"
+    "@biomejs/biome": "2.3.13",
+    "@types/luxon": "^3.7.1"
   }
 }

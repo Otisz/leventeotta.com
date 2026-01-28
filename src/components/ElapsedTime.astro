@@ -1,0 +1,56 @@
+---
+import type { DateTime } from "luxon";
+
+interface Props {
+  from: DateTime;
+  to: DateTime | null;
+}
+
+const { from, to } = Astro.props;
+
+function calculateElapsedTime(fromDate: DateTime, toDate: DateTime): string {
+  const diff = toDate.diff(fromDate, ["years", "months"]).toObject();
+
+  const years = Math.floor(diff.years || 0);
+  const months = Math.floor(diff.months || 0);
+
+  const parts: string[] = [];
+  if (years > 0) parts.push(`${years} yr${years > 1 ? "s" : ""}`);
+  if (months > 0) parts.push(`${months} mo${months > 1 ? "s" : ""}`);
+
+  return parts.join(" ") || "0 mos";
+}
+---
+
+{to ? (
+  <span>{calculateElapsedTime(from, to.plus({ month: 1 }))}</span>
+) : (
+  <span class="js-elapsed-time" data-from={from.toISO()}>0 mos</span>
+)}
+
+<script>
+  function calculateElapsedTime(fromDate: string): string {
+    const from = new Date(fromDate);
+    const now = new Date();
+
+    let months = (now.getFullYear() - from.getFullYear()) * 12;
+    months += now.getMonth() - from.getMonth();
+    months += 1;
+
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+
+    const parts: string[] = [];
+    if (years > 0) parts.push(`${years} yr${years > 1 ? "s" : ""}`);
+    if (remainingMonths > 0) parts.push(`${remainingMonths} mo${remainingMonths > 1 ? "s" : ""}`);
+
+    return parts.join(" ") || "1 mo";
+  }
+
+  document.querySelectorAll<HTMLSpanElement>(".js-elapsed-time").forEach((el) => {
+    const from = el.dataset.from;
+    if (from) {
+      el.textContent = calculateElapsedTime(from);
+    }
+  });
+</script>
