@@ -8,7 +8,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/src/**/*", "**/index.html", "**/vite.config.ts", "!**/src/routeTree.gen.ts", "!**/src/styles.css"]
+    "includes": ["**/src/**/*", "**/index.html", "**/vite.config.ts", "!**/src/routeTree.gen.ts"]
   },
   "formatter": {
     "enabled": true,
@@ -26,7 +26,13 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "nursery": {
+        "useSortedClasses": {
+          "level": "info",
+          "fix": "safe"
+        }
+      }
     }
   },
   "javascript": {
@@ -38,5 +44,27 @@
     "parser": {
       "tailwindDirectives": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/src/components/ui/**/*"],
+      "linter": {
+        "rules": {
+          "suspicious": "off",
+          "style": "off",
+          "a11y": "off"
+        }
+      },
+      "formatter": {
+        "enabled": false
+      },
+      "assist": {
+        "actions": {
+          "source": {
+            "organizeImports": "off"
+          }
+        }
+      }
+    }
+  ]
 }
