@@ -22,7 +22,7 @@ const person = {
   jobTitle: "Senior Fullstack Developer",
   description,
   url: siteUrl,
-  image: `${siteUrl}/me_4x.jpeg`,
+  image: `${siteUrl}/me_3x.jpeg`,
   email: "leventeotta@gmail.com",
   homeLocation: {
     "@type": "Place",
