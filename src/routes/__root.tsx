@@ -87,6 +87,7 @@ export const Route = createRootRoute({
           email: "leventeotta@gmail.com",
           homeLocation: "Budapest, Hungary",
           nationality: "Hungarian",
+          knowsLanguage: ["hu", "en"],
           sameAs: ["https://github.com/Otisz", "https://www.linkedin.com/in/leventeotta/"],
         }),
       },

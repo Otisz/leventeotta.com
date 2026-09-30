@@ -97,13 +97,15 @@ const skillGroups: { title: string; rows: [string, string][] }[] = [
     title: "Backend & Data",
     rows: [
       ["Backend", "PHP, Laravel, NodeJS, ExpressJS, NestJS, REST API"],
-      ["Database", "MySQL, PostgreSQL, SQLite, Redis, ORM (Eloquent, Prisma, Drizzle)"],
+      ["Database", "MySQL, PostgreSQL, SQLite, Redis"],
+      ["ORM", "Eloquent, Prisma, Drizzle"],
     ],
   },
   {
-    title: "Frontend & Design",
+    title: "Frontend, Mobile & Design",
     rows: [
-      ["Frontend", "JavaScript & TypeScript, ReactJS & NextJS, VueJS, TailwindCSS, WebSockets"],
+      ["Frontend", "JavaScript & TypeScript, ReactJS & NextJS, VueJS, Svelte, TailwindCSS, WebSockets"],
+      ["Mobile", "React Native, Capacitor"],
       ["State management", "TanStack Query, Form, Store"],
       ["Design", "UX/UI, Figma"],
     ],
@@ -157,7 +159,7 @@ function Stack() {
           </div>
         ))}
       </div>
-      <dl className="mt-14 grid grid-cols-1 gap-6 bg-muted p-6 md:grid-cols-2 md:p-8">
+      <dl className="mt-14 grid grid-cols-1 gap-6 bg-muted p-6 md:grid-cols-[2fr_1fr_1fr] md:gap-10 md:p-8">
         <div>
           <dt className="font-mono font-semibold">Skills</dt>
           <dd className="mt-2 leading-relaxed">
@@ -168,6 +170,10 @@ function Stack() {
         <div>
           <dt className="font-mono font-semibold">Interest</dt>
           <dd className="mt-2 leading-relaxed">Workout, Basketball, Cycling, Gaming, Learning and Reading</dd>
+        </div>
+        <div>
+          <dt className="font-mono font-semibold">Languages</dt>
+          <dd className="mt-2 leading-relaxed">Hungarian (native), English (C1)</dd>
         </div>
       </dl>
     </Section>
@@ -181,6 +187,19 @@ function ExperienceSection() {
         I have been architecting projects, leading development and mentoring juniors.
       </p>
       <div className="mt-10">
+        <Experience company="Bit Different Ltd." position="Senior Fullstack Developer" time="Sep. 2026 - Present">
+          <p>
+            At Bit Different, I work on myPlan.cloud, a cloud-based construction project management platform that brings
+            task management, document management and{" "}
+            <TextTooltip text="BIM" description="Building Information Modeling" /> model viewing into one place for
+            construction teams.
+          </p>
+          <ul>
+            <li>Building frontend features with Svelte.</li>
+            <li>Working on the backend with PHP.</li>
+            <li>Developing the mobile app with Capacitor.</li>
+          </ul>
+        </Experience>
         <Experience company="Bannerse" position="Senior Fullstack Developer" time="Mar. 2025 - Jan. 2026">
           <p>
             At Bannerse, I was responsible for leading the architecture and a full rewrite of a legacy Vue.js
