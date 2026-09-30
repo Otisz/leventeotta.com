@@ -1,10 +1,23 @@
 # Levente Otta
 
-> Levente Otta (Otisz) is a Senior Fullstack Developer in Budapest, Hungary, building CRM, ERP and SaaS platforms with Laravel, NestJS and React since 2017. He currently works at Bit Different Ltd. on myPlan.cloud, a construction project management platform.
+> Levente Otta (Otisz) is a Senior Fullstack Developer in Budapest, Hungary, building CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) and SaaS (Software as a Service) platforms with Laravel, NestJS and React since 2017. He currently works at Bit Different Ltd. on myPlan.cloud, a construction project management platform.
+
+Levente works across the full stack: PHP with Laravel and Node.js with NestJS on the backend, React and TypeScript (plus Vue.js and Svelte) on the frontend, and React Native or Capacitor for mobile. He has led the architecture and full rewrite of a legacy application into a multi-tenant platform, designed microservice backends, and set team standards for testing, code quality and CI/CD (Continuous Integration / Continuous Delivery). He also reviews code and mentors junior developers.
+
+## Key facts
+
+- Role: Senior Fullstack Developer at Bit Different Ltd. (since Sep. 2026)
+- Location: Budapest, Hungary
+- Experience: professional developer since May 2017
+- Core stack: Laravel, NestJS, TypeScript, React, PostgreSQL, Docker
+- Languages: Hungarian (native), English (C1)
+- Education: Software developer associate degree, BMSZC Petrik Lajos Két Tanítási Nyelvű Technikum (2017)
+- Availability: not available for new roles
 
 ## Profile
 
 - [Portfolio](https://leventeotta.com): Experience, skills, education and contact
+- [Full profile in Markdown](https://leventeotta.com/llms-full.txt): Complete skills list and work history
 - [CV / Resume](https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf): Full CV in PDF
 - [GitHub](https://github.com/Otisz): Source code and open-source projects
 - [LinkedIn](https://www.linkedin.com/in/leventeotta/): Professional profile
@@ -13,3 +26,13 @@
 
 - [otisz/laravel-imgix](https://packagist.org/packages/otisz/laravel-imgix): Laravel integration for imgix
 - [otisz/laravel-billingo](https://packagist.org/packages/otisz/laravel-billingo): Billingo REST API integration for Laravel
+
+## Contact
+
+- Email: leventeotta@gmail.com
+
+## Optional
+
+- [myPlan.cloud](https://myplan.cloud): Construction project management platform he currently works on
+- [Stack Overflow](https://stackoverflow.com/users/7991098/levente-otta): Q&A profile
+- [Packagist](https://packagist.org/packages/otisz/): All published PHP packages

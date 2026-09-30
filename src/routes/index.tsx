@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 const portraitSizes = "(min-width: 768px) 384px, 288px";
 
 function portraitSrcSet(format: "avif" | "webp" | "jpeg") {
-  return `/me_1x.${format} 240w, /me_2x.${format} 480w, /me_3x.${format} 960w, /me_4x.${format} 1610w`;
+  return `/me_1x.${format} 240w, /me_2x.${format} 480w, /me_3x.${format} 960w`;
 }
 
 const inlineLink = "underline decoration-primary underline-offset-4 transition-colors hover:text-brand";
@@ -61,6 +61,7 @@ function Hero() {
           >
             Levente Otta
           </span>
+          <span className="sr-only">, Senior Fullstack Developer</span>
         </h1>
         <p
           className="enter mt-6 max-w-[42ch] text-lg text-muted-foreground leading-relaxed md:text-xl"

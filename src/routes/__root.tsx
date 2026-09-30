@@ -60,6 +60,7 @@ const structuredData = {
       "@id": `${siteUrl}/#profile`,
       url: siteUrl,
       name: title,
+      dateModified: "2026-09-30",
       isPartOf: { "@id": `${siteUrl}/#website` },
       mainEntity: person,
     },

@@ -1,0 +1,122 @@
+# Levente Otta
+
+> Senior Fullstack Developer in Budapest, Hungary. Building CRM, ERP and SaaS platforms with Laravel, NestJS and React since 2017.
+
+Website: https://leventeotta.com
+Email: leventeotta@gmail.com
+CV: https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf
+GitHub: https://github.com/Otisz
+LinkedIn: https://www.linkedin.com/in/leventeotta/
+Stack Overflow: https://stackoverflow.com/users/7991098/levente-otta
+Availability: not available for new roles
+
+## About
+
+I'm Levente Otta, known online as Otisz, a Senior Fullstack Developer based in Budapest, Hungary. I have been building web applications professionally since 2017, and I currently work at Bit Different on [myPlan.cloud](https://myplan.cloud), a construction project management platform.
+
+Most of my work is business software: CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) and PMS (Property Management Software) platforms, insurance and donation systems, and an AI-powered customer service chatbot. On the backend I mainly use PHP with Laravel and Node.js with NestJS. On the frontend I work with React and TypeScript, as well as Vue.js and Svelte.
+
+I have led the architecture and full rewrite of a legacy application into a multi-tenant platform, designed microservice backends, and set standards for testing, code quality and CI/CD. I also review code, mentor junior developers, and maintain open-source Laravel packages such as [laravel-imgix](https://packagist.org/packages/otisz/laravel-imgix) and [laravel-billingo](https://packagist.org/packages/otisz/laravel-billingo).
+
+## Technologies & Skills
+
+Core: Laravel, NestJS, TypeScript, React, PostgreSQL, Docker
+
+### Backend & Data
+
+- Backend: PHP, Laravel, Node.js, Express, NestJS, REST API
+- Database: MySQL, PostgreSQL, SQLite, Redis
+- ORM: Eloquent, Prisma, Drizzle
+
+### Frontend, Mobile & Design
+
+- Frontend: JavaScript & TypeScript, React & Next.js, Vue.js, Svelte, Tailwind CSS, WebSockets
+- Mobile: React Native, Capacitor
+- State management: TanStack Query, Form, Store
+- Design: UX/UI, Figma
+
+### Quality & Tooling
+
+- Testing: PHPUnit, Pest, Vitest, Playwright
+- Dev tools: Git, GitHub, Vite, ESLint & Prettier, Biome, Docker
+- CI/CD: GitHub Actions
+
+### Hosting & AI
+
+- Hosting: AWS, Cloudflare, Vercel, Laravel Forge, Ubuntu
+- AI tools: Claude Code, JetBrains Junie, GitHub Copilot
+
+### Other
+
+- Skills: Fullstack architecture & system design, frontend engineering, backend development & API design, performance optimization & developer experience, leadership, mentoring & collaboration
+- Languages: Hungarian (native), English (C1)
+- Interests: Workout, basketball, cycling, gaming, learning and reading
+
+## Experience
+
+### Senior Fullstack Developer, Bit Different Ltd. (Sep. 2026 - Present)
+
+Working on myPlan.cloud, a cloud-based construction project management platform that brings task management, document management and BIM (Building Information Modeling) model viewing into one place for construction teams.
+
+- Building frontend features with Svelte.
+- Working on the backend with PHP.
+- Developing the mobile app with Capacitor.
+
+### Senior Fullstack Developer, Bannerse (Mar. 2025 - Jan. 2026)
+
+Led the architecture and a full rewrite of a legacy Vue.js application into a scalable, multi-tenant platform.
+
+- Directed architecture and execution of the complete rewrite into a modern, multi-tenant solution.
+- Built React applications with TanStack Router, Query, Form and Store.
+- Integrated WebSockets to deliver real-time data to users.
+- Designed and implemented a microservice backend using Laravel and NestJS.
+- Translated Figma designs into production-ready UIs together with designers.
+- Established standards for testing, code quality and CI/CD workflows.
+- Conducted code reviews and mentored team members.
+
+### Senior Fullstack Developer, Captiwate (Nov. 2024 - Dec. 2024)
+
+Contributed to an AI-powered customer service chatbot.
+
+- Engineered core backend and frontend components using Laravel and Vue.js.
+- Integrated AI features for customer support automation.
+
+### Senior Fullstack Developer, TMRW Applications (Jul. 2020 - Sep. 2024)
+
+Designed, built and maintained web applications across diverse domains.
+
+- Led planning, documentation and delivery of multiple web applications.
+- Maintained and enhanced Vue.js frontends for a PMS project.
+- Developed new React and Next.js applications with Tailwind CSS.
+- Built REST API backends using Laravel and NestJS in microservice architectures.
+- Collaborated with frontend, backend, mobile and DevOps teams on complex features.
+- Established standards for code quality, testing and CI/CD workflows.
+- Conducted code reviews and mentored team members.
+
+### Medior Fullstack Developer, Designatives (Jan. 2020 - Jun. 2020)
+
+- Developed an insurance management platform using Laravel and Vue.js.
+- Designed and launched a donation platform, leading backend development with Laravel.
+
+### Medior Developer, Codebuild (Jun. 2018 - Nov. 2019)
+
+- Developed CRM/ERP applications using Laravel and Vue.js.
+- Learned component-based architecture and modern React practices from senior developers.
+
+### Junior Developer, UniOffice (May 2017 - Apr. 2018)
+
+- Built features for an RSVP system alongside senior engineers.
+
+### Trainee, Foltnet (Jun. 2016 - Jul. 2016)
+
+- Developed a bug reporting module for a custom CMS.
+
+## Education
+
+- Software developer associate degree, BMSZC Petrik Lajos Két Tanítási Nyelvű Technikum (Jul. 2017): Java, Java Android, C#, PHP and SQL
+- Graduation, BMSZC Bláthy Ottó Titusz Informatikai Szakgimnáziuma (2010 - 2015)
+
+## Open source
+
+- [otisz/laravel-imgix](https://packagist.org/packages/otisz/laravel-imgix): Laravel integration for imgix
+- [otisz/laravel-billingo](https://packagist.org/packages/otisz/laravel-billingo): Billingo REST API integration for Laravel
