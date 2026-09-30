@@ -1,4 +1,5 @@
 import { FilePdfIcon, GithubLogoIcon, LinkedinLogoIcon, ListIcon } from "@phosphor-icons/react/ssr";
+import { Logo } from "#/components/logo.tsx";
 import { ModeToggle } from "#/components/mode-toggle.tsx";
 import { Button, buttonVariants } from "#/components/ui/button.tsx";
 import { Sheet, SheetContent, SheetTrigger } from "#/components/ui/sheet.tsx";
@@ -14,7 +15,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
         <a href="/" className="flex items-center" aria-label="Levente Otta, home">
-          <img src="/icon3.png" alt="" width={36} height={36} className="size-9" />
+          <Logo className="size-9" />
         </a>
         <div className="flex items-center gap-1">
           <a

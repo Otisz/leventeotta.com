@@ -62,7 +62,8 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: siteUrl },
-      { rel: "icon", href: "/favicon.ico", sizes: "16x16 32x32" },
+      { rel: "icon", href: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/icon1.png", sizes: "16x16", type: "image/png" },
       { rel: "icon", href: "/icon2.png", sizes: "32x32", type: "image/png" },
       { rel: "icon", href: "/icon3.png", sizes: "192x192", type: "image/png" },
