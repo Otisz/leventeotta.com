@@ -51,6 +51,9 @@ export const Route = createRootRoute({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:image", content: `${siteUrl}/og.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Levente Otta, Senior Fullstack Developer" },
       { property: "og:type", content: "website" },
 
       { property: "twitter:url", content: siteUrl },
