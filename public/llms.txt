@@ -1,0 +1,15 @@
+# Levente Otta
+
+> Levente Otta (Otisz) is a Senior Fullstack Developer in Budapest, Hungary, building CRM, ERP and SaaS platforms with Laravel, NestJS and React since 2017. He currently works at Bit Different Ltd. on myPlan.cloud, a construction project management platform.
+
+## Profile
+
+- [Portfolio](https://leventeotta.com): Experience, skills, education and contact
+- [CV / Resume](https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf): Full CV in PDF
+- [GitHub](https://github.com/Otisz): Source code and open-source projects
+- [LinkedIn](https://www.linkedin.com/in/leventeotta/): Professional profile
+
+## Open source
+
+- [otisz/laravel-imgix](https://packagist.org/packages/otisz/laravel-imgix): Laravel integration for imgix
+- [otisz/laravel-billingo](https://packagist.org/packages/otisz/laravel-billingo): Billingo REST API integration for Laravel

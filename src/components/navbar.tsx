@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
-        <a href="/" className="flex items-center" aria-label="Levente Otta, home">
+        <a href="/" className="flex size-11 items-center justify-center" aria-label="Levente Otta, home">
           <Logo className="size-9" />
         </a>
         <div className="flex items-center gap-1">
@@ -40,7 +40,7 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger
               render={
-                <Button variant="ghost" size="icon-lg" className="sm:hidden">
+                <Button variant="ghost" size="icon-lg" className="size-11 sm:hidden">
                   <ListIcon className="size-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>

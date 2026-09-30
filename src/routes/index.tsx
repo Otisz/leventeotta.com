@@ -8,7 +8,29 @@ import { buttonVariants } from "#/components/ui/button.tsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "#/components/ui/tooltip.tsx";
 import { cn } from "#/lib/utils.ts";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        type: "image/avif",
+        imageSrcSet: portraitSrcSet("avif"),
+        imageSizes: portraitSizes,
+        fetchPriority: "high",
+      },
+    ],
+  }),
+  component: Home,
+});
+
+const portraitSizes = "(min-width: 768px) 384px, 288px";
+
+function portraitSrcSet(format: "avif" | "webp" | "jpeg") {
+  return `/me_1x.${format} 240w, /me_2x.${format} 480w, /me_3x.${format} 960w, /me_4x.${format} 1610w`;
+}
+
+const inlineLink = "underline decoration-primary underline-offset-4 transition-colors hover:text-brand";
 
 const cta = "h-11 gap-2 px-5 font-mono text-sm transition-transform active:scale-[0.98]";
 
@@ -16,6 +38,7 @@ function Home() {
   return (
     <main>
       <Hero />
+      <About />
       <Stack />
       <ExperienceSection />
       <Education />
@@ -31,7 +54,7 @@ function Hero() {
         <h1 className="font-mono tracking-tight">
           <span className="enter block text-muted-foreground text-xl md:text-2xl" style={{ "--i": 0 } as CSSProperties}>
             Hello, I'm
-          </span>
+          </span>{" "}
           <span
             className="enter mt-2 block font-bold text-5xl text-brand leading-[1.05] sm:text-6xl lg:text-7xl"
             style={{ "--i": 1 } as CSSProperties}
@@ -56,19 +79,68 @@ function Hero() {
       <div className="enter md:col-span-5 md:justify-self-end" style={{ "--i": 2 } as CSSProperties}>
         <div className="relative mx-auto w-64 sm:w-72 md:w-[min(24rem,calc((100dvh-8rem)*0.75))]">
           <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 bg-primary" />
-          <img
-            srcSet="/me_1x.jpeg 240w, /me_2x.jpeg 480w, /me_3x.jpeg 960w, /me_4x.jpeg 1610w"
-            sizes="(min-width: 768px) 384px, 288px"
-            src="/me_2x.jpeg"
-            alt="Levente Otta"
-            width={480}
-            height={640}
-            fetchPriority="high"
-            className="relative aspect-3/4 w-full border border-foreground/10 object-cover"
-          />
+          <picture>
+            <source type="image/avif" srcSet={portraitSrcSet("avif")} sizes={portraitSizes} />
+            <source type="image/webp" srcSet={portraitSrcSet("webp")} sizes={portraitSizes} />
+            <img
+              srcSet={portraitSrcSet("jpeg")}
+              sizes={portraitSizes}
+              src="/me_2x.jpeg"
+              alt="Levente Otta, Senior Fullstack Developer"
+              width={480}
+              height={640}
+              fetchPriority="high"
+              className="relative aspect-3/4 w-full border border-foreground/10 object-cover"
+            />
+          </picture>
         </div>
       </div>
     </section>
+  );
+}
+
+function About() {
+  return (
+    <Section title="About">
+      <div className="mt-8 max-w-[70ch] space-y-5 text-lg leading-relaxed">
+        <p>
+          I'm Levente Otta, known online as Otisz, a Senior Fullstack Developer based in Budapest, Hungary. I have been
+          building web applications professionally since 2017, and I currently work at Bit Different on{" "}
+          <a href="https://myplan.cloud" target="_blank" rel="noopener" className={inlineLink}>
+            myPlan.cloud
+          </a>
+          , a construction project management platform.
+        </p>
+        <p>
+          Most of my work is business software: CRM, ERP and property management platforms, insurance and donation
+          systems, and an AI-powered customer service chatbot. On the backend I mainly use PHP with Laravel and Node.js
+          with NestJS. On the frontend I work with React and TypeScript, as well as Vue.js and Svelte.
+        </p>
+        <p>
+          I have led the architecture and full rewrite of a legacy application into a multi-tenant platform, designed
+          microservice backends, and set standards for testing, code quality and CI/CD. I also review code, mentor
+          junior developers, and maintain open-source Laravel packages such as{" "}
+          <a
+            href="https://packagist.org/packages/otisz/laravel-imgix"
+            target="_blank"
+            rel="noopener"
+            className={inlineLink}
+          >
+            laravel-imgix
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://packagist.org/packages/otisz/laravel-billingo"
+            target="_blank"
+            rel="noopener"
+            className={inlineLink}
+          >
+            laravel-billingo
+          </a>
+          .
+        </p>
+      </div>
+    </Section>
   );
 }
 
@@ -385,7 +457,10 @@ function Experience(props: PropsWithChildren<{ company: string; position: string
         </div>
       </div>
       <div className="md:col-span-9">
-        <h3 className="font-mono font-semibold text-xl">{props.position}</h3>
+        <h3 className="font-mono font-semibold text-xl">
+          {props.position}
+          <span className="sr-only"> at {props.company}</span>
+        </h3>
         {props.children && (
           <div className="mt-4 space-y-5 leading-relaxed [&_li]:relative [&_li]:pl-5 [&_li]:before:absolute [&_li]:before:top-[0.6em] [&_li]:before:left-0 [&_li]:before:size-1.5 [&_li]:before:bg-primary [&_p]:max-w-[65ch] [&_ul]:grid [&_ul]:gap-x-10 [&_ul]:gap-y-3 lg:[&_ul]:grid-cols-2">
             {props.children}

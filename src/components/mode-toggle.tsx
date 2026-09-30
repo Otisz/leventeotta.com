@@ -14,7 +14,9 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={<Button variant="ghost" size="icon-lg" aria-label="Switch to light or dark theme" />}
+        render={
+          <Button variant="ghost" size="icon-lg" className="size-11" aria-label="Switch to light or dark theme" />
+        }
       >
         <SunIcon className="size-5 rotate-0 transition-all dark:-rotate-90 dark:scale-0" />
         <MoonIcon className="absolute size-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
