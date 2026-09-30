@@ -7,7 +7,6 @@ import ReactJSLogoIcon from "#/components/svg/reactjs.tsx";
 import TailwindLogoIcon from "#/components/svg/tailwind.tsx";
 import TypeScriptLogoIcon from "#/components/svg/typescript.tsx";
 import VueJSLogoIcon from "#/components/svg/vuejs.tsx";
-import { Badge } from "#/components/ui/badge.tsx";
 import { buttonVariants } from "#/components/ui/button.tsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "#/components/ui/tooltip.tsx";
 import { cn } from "#/lib/utils.ts";
@@ -29,7 +28,6 @@ function Home() {
           <span className="text-muted-foreground">
             <MapPinIcon className="inline animate-bounce" alt="Located in" /> Budapest, Hungary
           </span>
-          <Badge className="bg-green-800">Open to work</Badge>
         </p>
       </section>
       <section className="flex flex-col gap-8 md:flex-row md:justify-center">
