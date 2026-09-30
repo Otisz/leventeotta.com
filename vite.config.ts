@@ -7,6 +7,8 @@ import { defineConfig } from "vite";
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  // devtools-ui uses Solid's client-only `use:` directive, which breaks SSR pre-bundling
+  environments: { ssr: { optimizeDeps: { exclude: ["@tanstack/react-devtools"] } } },
   plugins: [
     devtools(),
     cloudflare({ viteEnvironment: { name: "ssr" } }),
