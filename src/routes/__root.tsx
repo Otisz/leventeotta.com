@@ -8,7 +8,7 @@ import { TooltipProvider } from "#/components/ui/tooltip.tsx";
 import appCss from "#/styles.css?url";
 
 const siteUrl = "https://leventeotta.com";
-const title = "Levente Otta's Portfolio";
+const title = "Levente Otta, Senior Fullstack Developer";
 const description = "Fullstack web developer with almost 10 years of experience using Laravel, NestJS and ReactJS.";
 
 export const Route = createRootRoute({
@@ -19,6 +19,8 @@ export const Route = createRootRoute({
       { title },
       { name: "description", content: description },
       { name: "author", content: "Levente Otta" },
+      { name: "theme-color", content: "#f9fafb", media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: "#030712", media: "(prefers-color-scheme: dark)" },
       {
         name: "keywords",
         content: [
@@ -59,6 +61,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: siteUrl },
       { rel: "icon", href: "/favicon.ico", sizes: "16x16 32x32" },
       { rel: "icon", href: "/icon1.png", sizes: "16x16", type: "image/png" },
       { rel: "icon", href: "/icon2.png", sizes: "32x32", type: "image/png" },
@@ -80,6 +83,7 @@ export const Route = createRootRoute({
           email: "leventeotta@gmail.com",
           homeLocation: "Budapest, Hungary",
           nationality: "Hungarian",
+          sameAs: ["https://github.com/Otisz", "https://www.linkedin.com/in/leventeotta/"],
         }),
       },
     ],
@@ -89,18 +93,16 @@ export const Route = createRootRoute({
 
 function RootDocument(props: PropsWithChildren) {
   return (
-    <html lang="en" suppressHydrationWarning className="font-mono">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body className="mb-24 bg-background text-foreground antialiased">
+      <body className="bg-background font-sans text-foreground antialiased">
         <ThemeProvider defaultTheme="system" storageKey="theme">
-          <div className="prose dark:prose-invert prose-lg mx-auto prose-h2:mt-0 prose-h3:border-b prose-ul:marker:text-primary">
-            <TooltipProvider>
-              <Navbar />
-              {props.children}
-            </TooltipProvider>
-          </div>
+          <TooltipProvider>
+            <Navbar />
+            {props.children}
+          </TooltipProvider>
         </ThemeProvider>
         <TanStackDevtools
           config={{

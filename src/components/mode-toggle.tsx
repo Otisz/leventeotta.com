@@ -14,10 +14,10 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={<Button variant="secondary" size="icon-18" aria-label="Switch to light or dark theme" />}
+        render={<Button variant="ghost" size="icon-lg" aria-label="Switch to light or dark theme" />}
       >
-        <SunIcon className="size-8 rotate-0 transition-all dark:-rotate-90 dark:scale-0" />
-        <MoonIcon className="absolute size-8 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <SunIcon className="size-5 rotate-0 transition-all dark:-rotate-90 dark:scale-0" />
+        <MoonIcon className="absolute size-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
         <DropdownMenuItem onClick={() => setTheme("light")}>

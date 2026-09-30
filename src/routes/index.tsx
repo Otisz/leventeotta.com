@@ -1,136 +1,186 @@
-import { FilePdfIcon, GithubLogoIcon, LinkedinLogoIcon, MapPinIcon } from "@phosphor-icons/react/ssr";
+import { CaretDownIcon, EnvelopeSimpleIcon, FilePdfIcon } from "@phosphor-icons/react/ssr";
 import { createFileRoute } from "@tanstack/react-router";
-import type { PropsWithChildren, ReactNode } from "react";
-import LaravelLogoIcon from "#/components/svg/laravel.tsx";
-import NestJSLogoIcon from "#/components/svg/nestjs.tsx";
-import ReactJSLogoIcon from "#/components/svg/reactjs.tsx";
-import TailwindLogoIcon from "#/components/svg/tailwind.tsx";
-import TypeScriptLogoIcon from "#/components/svg/typescript.tsx";
-import VueJSLogoIcon from "#/components/svg/vuejs.tsx";
+import type { CSSProperties, PropsWithChildren } from "react";
+import type { SimpleIcon } from "simple-icons";
+import { siDocker, siLaravel, siNestjs, siPostgresql, siReact, siTypescript } from "simple-icons";
+import { TechLogo } from "#/components/tech-logo.tsx";
 import { buttonVariants } from "#/components/ui/button.tsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "#/components/ui/tooltip.tsx";
 import { cn } from "#/lib/utils.ts";
 
 export const Route = createFileRoute("/")({ component: Home });
 
+const cta = "h-11 gap-2 px-5 font-mono text-sm transition-transform active:scale-[0.98]";
+
 function Home() {
   return (
-    <main className="container flex flex-col items-center p-4">
-      <section className="max-w-none">
-        <h1 className="text-balance text-center">
-          Hello, I'm
-          <br />
-          <span className="text-orange-500 text-shadow-foreground text-shadow-xs dark:text-shadow-none">
+    <main>
+      <Hero />
+      <Stack />
+      <ExperienceSection />
+      <Education />
+      <Contact />
+    </main>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-6xl grid-cols-1 items-center gap-12 px-4 py-16 md:grid-cols-12 md:px-8 md:py-12">
+      <div className="md:col-span-7">
+        <h1 className="font-mono tracking-tight">
+          <span className="enter block text-muted-foreground text-xl md:text-2xl" style={{ "--i": 0 } as CSSProperties}>
+            Hello, I'm
+          </span>
+          <span
+            className="enter mt-2 block font-bold text-5xl text-brand leading-[1.05] sm:text-6xl lg:text-7xl"
+            style={{ "--i": 1 } as CSSProperties}
+          >
             Levente Otta
           </span>
         </h1>
-        <p className="flex w-full flex-col items-center gap-4 md:flex-row">
-          <span className="text-muted-foreground">
-            <MapPinIcon className="inline animate-bounce" alt="Located in" /> Budapest, Hungary
-          </span>
+        <p
+          className="enter mt-6 max-w-[42ch] text-lg text-muted-foreground leading-relaxed md:text-xl"
+          style={{ "--i": 2 } as CSSProperties}
+        >
+          Senior Fullstack Developer in Budapest. Nearly 10 years building scalable{" "}
+          <TextTooltip text="CRM" description="Customer Relationship Management" />,{" "}
+          <TextTooltip text="ERP" description="Enterprise Resource Planning" /> and{" "}
+          <TextTooltip text="PMS" description="Property Management Software" /> platforms with Laravel, NestJS and
+          React.
         </p>
-      </section>
-      <section className="flex flex-col gap-8 md:flex-row md:justify-center">
-        <div className="flex flex-col gap-4">
+        <div className="enter mt-8 flex flex-wrap gap-3" style={{ "--i": 3 } as CSSProperties}>
+          <ContactButtons />
+        </div>
+      </div>
+      <div className="enter md:col-span-5 md:justify-self-end" style={{ "--i": 2 } as CSSProperties}>
+        <div className="relative mx-auto w-64 sm:w-72 md:w-[min(24rem,calc((100dvh-8rem)*0.75))]">
+          <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 bg-primary" />
           <img
-            srcSet="/me_1x.jpeg, /me_2x.jpeg 1.5x, /me_3x.jpeg 2x"
-            src="/me_4x.jpeg"
+            srcSet="/me_1x.jpeg 240w, /me_2x.jpeg 480w, /me_3x.jpeg 960w, /me_4x.jpeg 1610w"
+            sizes="(min-width: 768px) 384px, 288px"
+            src="/me_2x.jpeg"
             alt="Levente Otta"
-            className="my-0! w-50 self-center border-6 border-border object-cover md:self-start"
-            width={160}
-            height={160}
+            width={480}
+            height={640}
+            fetchPriority="high"
+            className="relative aspect-3/4 w-full border border-foreground/10 object-cover"
           />
-          <div className="not-prose grid grid-rows-2 gap-4 md:grid-rows-1">
-            <a
-              href="https://github.com/Otisz"
-              target="_blank"
-              className={buttonVariants({ variant: "secondary" })}
-              rel="noopener"
-            >
-              <GithubLogoIcon className="inline" /> Github
-            </a>
-            <a
-              href="https://www.linkedin.com/in/leventeotta/"
-              target="_blank"
-              className={buttonVariants({ variant: "secondary" })}
-              rel="noopener"
-            >
-              <LinkedinLogoIcon className="inline" /> LinkedIn
-            </a>
-            <a
-              href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
-              target="_blank"
-              className={cn(buttonVariants({ variant: "secondary" }), "col-span-2 md:col-span-1")}
-              rel="noopener"
-            >
-              <FilePdfIcon className="inline" /> CV / Resume
-            </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Section(props: PropsWithChildren<{ title: string; className?: string }>) {
+  return (
+    <section className="reveal mx-auto max-w-6xl px-4 md:px-8">
+      <div className={cn("border-t py-20 md:py-24", props.className)}>
+        <h2 className="font-bold font-mono text-3xl tracking-tight md:text-4xl">{props.title}</h2>
+        {props.children}
+      </div>
+    </section>
+  );
+}
+
+const coreTech: { name: string; icon: SimpleIcon }[] = [
+  { name: "Laravel", icon: siLaravel },
+  { name: "NestJS", icon: siNestjs },
+  { name: "TypeScript", icon: siTypescript },
+  { name: "ReactJS", icon: siReact },
+  { name: "PostgreSQL", icon: siPostgresql },
+  { name: "Docker", icon: siDocker },
+];
+
+const skillGroups: { title: string; rows: [string, string][] }[] = [
+  {
+    title: "Backend & Data",
+    rows: [
+      ["Backend", "PHP, Laravel, NodeJS, ExpressJS, NestJS, REST API"],
+      ["Database", "MySQL, PostgreSQL, SQLite, Redis, ORM (Eloquent, Prisma, Drizzle)"],
+    ],
+  },
+  {
+    title: "Frontend & Design",
+    rows: [
+      ["Frontend", "JavaScript & TypeScript, ReactJS & NextJS, VueJS, TailwindCSS, WebSockets"],
+      ["State management", "TanStack Query, Form, Store"],
+      ["Design", "UX/UI, Figma"],
+    ],
+  },
+  {
+    title: "Quality & Tooling",
+    rows: [
+      ["Testing", "PHPUnit, Pest, Vitest, Playwright"],
+      ["Dev tools", "Git, GitHub, Vite, ESLint & Prettier, BiomeJS, Docker"],
+      ["CI/CD", "GitHub Actions"],
+    ],
+  },
+  {
+    title: "Hosting & AI",
+    rows: [
+      ["Hosting", "AWS, Cloudflare, Vercel, Laravel Forge, Ubuntu"],
+      ["AI tools", "Claude Code, JetBrains Junie, GitHub Copilot"],
+    ],
+  },
+];
+
+function Stack() {
+  return (
+    <Section title="Technologies & Skills">
+      <ul className="mt-10 grid grid-cols-3 gap-px border bg-border md:grid-cols-6">
+        {coreTech.map((tech) => (
+          <li
+            key={tech.name}
+            className="group flex flex-col items-center gap-3 bg-background px-2 py-6 transition-colors hover:bg-muted"
+          >
+            <TechLogo
+              icon={tech.icon}
+              className="size-9 text-foreground/80 transition-transform duration-300 group-hover:-translate-y-0.5"
+            />
+            <span className="font-mono text-muted-foreground text-xs sm:text-sm">{tech.name}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-14 grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
+        {skillGroups.map((group) => (
+          <div key={group.title}>
+            <h3 className="border-primary border-l-2 pl-3 font-mono font-semibold">{group.title}</h3>
+            <dl className="mt-4 space-y-3">
+              {group.rows.map(([label, value]) => (
+                <div key={label}>
+                  <dt className="font-mono text-muted-foreground text-sm">{label}</dt>
+                  <dd className="mt-0.5 leading-relaxed">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
+        ))}
+      </div>
+      <dl className="mt-14 grid grid-cols-1 gap-6 bg-muted p-6 md:grid-cols-2 md:p-8">
+        <div>
+          <dt className="font-mono font-semibold">Skills</dt>
+          <dd className="mt-2 leading-relaxed">
+            Fullstack Architecture & System Design, Frontend Engineering, Backend Development & API Design, Performance
+            Optimization & Developer Experience, Leadership, Mentoring & Collaboration
+          </dd>
         </div>
-        <div className="flex-1">
-          <h2>Senior Fullstack Developer</h2>
-          <p>
-            Nearly 10 years of experience in web development using Laravel and NestJs on the backend, with ReactJS and
-            VueJS on the frontend.
-          </p>
-          <p>
-            Specialized on scalable, performant and secure{" "}
-            <TextTooltip text="CRM" description="Company Relationship Management" />,{" "}
-            <TextTooltip text="ERP" description="Enterprise Resource Planning" /> and{" "}
-            <TextTooltip text="PMS" description="Property Management Software" /> applications.
-          </p>
-          <p>I have been architecting projects, leading development and mentoring juniors.</p>
+        <div>
+          <dt className="font-mono font-semibold">Interest</dt>
+          <dd className="mt-2 leading-relaxed">Workout, Basketball, Cycling, Gaming, Learning and Reading</dd>
         </div>
-      </section>
-      <section className="w-full-">
-        <h3>Technologies & Skills</h3>
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          <Technology name="Laravel" description="Backend Framework" logo={<LaravelLogoIcon />} />
-          <Technology name="NestJS" description="Backend Framework" logo={<NestJSLogoIcon />} />
-          <Technology name="ReactJS" description="Frontend Framework" logo={<ReactJSLogoIcon />} />
-          <Technology name="VueJS" description="Frontend Framework" logo={<VueJSLogoIcon />} />
-          <Technology name="TypeScript" description="JS with types" logo={<TypeScriptLogoIcon />} />
-          <Technology name="TailwindCSS" description="UI Framework" logo={<TailwindLogoIcon />} />
-        </div>
-        <ul>
-          <li>
-            <strong>Backend:</strong> PHP, Laravel, NodeJS, ExpressJS, NestJS, REST API
-          </li>
-          <li>
-            <strong>Database:</strong> MySql, PostgreSQL, SQLite, Redis, ORM (Eloquent, Prisma, Drizzle)
-          </li>
-          <li>
-            <strong>Frontend:</strong> Javascript & Typescript, ReactJS & NextJS, VueJS, TailwindCSS, WebSockets
-          </li>
-          <li>
-            <strong>State management:</strong> TanStack Query, Form, Store
-          </li>
-          <li>
-            <strong>Design:</strong> UX/UI, Figma ○ Testing: PHPUnit, Pest, Vitest, Playwright
-          </li>
-          <li>
-            <strong>Dev tools:</strong> Git, Github, Vite, ESLint & Prettier, BiomeJS, Docker
-          </li>
-          <li>
-            <strong>CI/CD:</strong> Github Actions
-          </li>
-          <li>
-            <strong>Hosting:</strong> AWS, Cloudflare, Vercel, Laravel Forge, Ubuntu
-          </li>
-          <li>
-            <strong>AI tools:</strong> Claude Code, JetBrains Junie, Github Copilot
-          </li>
-        </ul>
-        <p>
-          <strong>Skills:</strong> Fullstack Architecture & System Design, Frontend Engineering, Backend Development &
-          API Design, Performance Optimization & Developer Experience, Leadership, Mentoring & Collaboration
-        </p>
-        <p>
-          <strong>Interest:</strong> Workout, Basketball, Cycling, Gaming, Learning and Reading
-        </p>
-      </section>
-      <section>
-        <h3>Experience</h3>
+      </dl>
+    </Section>
+  );
+}
+
+function ExperienceSection() {
+  return (
+    <Section title="Experience">
+      <p className="mt-6 max-w-[65ch] text-lg text-muted-foreground leading-relaxed">
+        I have been architecting projects, leading development and mentoring juniors.
+      </p>
+      <div className="mt-10">
         <Experience company="Bannerse" position="Senior Fullstack Developer" time="Mar. 2025 - Jan. 2026">
           <p>
             At Bannerse, I was responsible for leading the architecture and a full rewrite of a legacy Vue.js
@@ -198,6 +248,12 @@ function Home() {
             </li>
           </ul>
         </Experience>
+      </div>
+      <details className="group/details mt-4 border-t">
+        <summary className="flex cursor-pointer list-none items-center justify-between py-6 font-mono font-semibold transition-colors hover:text-brand focus-visible:outline-2 focus-visible:outline-ring [&::-webkit-details-marker]:hidden">
+          Earlier roles
+          <CaretDownIcon className="size-5 transition-transform duration-300 group-open/details:rotate-180" />
+        </summary>
         <Experience company="Designatives" position="Medior Fullstack Developer" time="Jan. 2020 - Jun. 2020">
           <p>
             At Designatives, I contributed to building business-critical platforms for insurance management and
@@ -230,32 +286,69 @@ function Home() {
         <Experience company="Foltnet" position="Trainee" time="Jun. 2016 - Jul. 2016">
           <p>Developing a bug reporting module for an existing custom CMS system.</p>
         </Experience>
-      </section>
-      <section className="w-full">
-        <h3>Education</h3>
-        <Experience
-          company="BMSZC Petrik Lajos Két Tanítási Nyelvű Technikum"
-          position="Software developer Associate degree"
-          time="Jul. 2017"
-        >
-          <ul>
-            <li>Java, Java Android, C#, PHP and SQL</li>
-          </ul>
-        </Experience>
-        <Experience
-          company="BMSZC Bláthy Ottó Titusz Informatikai Szakgimnáziuma"
-          position="Graduation"
-          time="2010 - 2015"
-        />
-      </section>
-    </main>
+      </details>
+    </Section>
+  );
+}
+
+function Education() {
+  return (
+    <Section title="Education">
+      <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+        <div className="border-primary border-t-2 pt-5">
+          <time className="font-mono text-muted-foreground text-sm">Jul. 2017</time>
+          <h3 className="mt-2 font-mono font-semibold text-lg">Software developer Associate degree</h3>
+          <p className="mt-1 text-muted-foreground">BMSZC Petrik Lajos Két Tanítási Nyelvű Technikum</p>
+          <p className="mt-4">Java, Java Android, C#, PHP and SQL</p>
+        </div>
+        <div className="border-t-2 pt-5">
+          <time className="font-mono text-muted-foreground text-sm">2010 - 2015</time>
+          <h3 className="mt-2 font-mono font-semibold text-lg">Graduation</h3>
+          <p className="mt-1 text-muted-foreground">BMSZC Bláthy Ottó Titusz Informatikai Szakgimnáziuma</p>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function ContactButtons() {
+  return (
+    <>
+      <a
+        href="https://assets.leventeotta.com/documents/Levente%20Otta%20CV.pdf"
+        target="_blank"
+        rel="noopener"
+        aria-label="Download CV / Resume"
+        className={cn(buttonVariants(), cta, "hover:bg-primary/90")}
+      >
+        <FilePdfIcon className="size-5" /> CV / Resume
+      </a>
+      <a href="mailto:leventeotta@gmail.com" className={cn(buttonVariants({ variant: "outline" }), cta)}>
+        <EnvelopeSimpleIcon className="size-5" /> Email
+      </a>
+    </>
+  );
+}
+
+function Contact() {
+  return (
+    <Section title="Contact" className="pb-32 md:pb-40">
+      <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <p className="max-w-[40ch] text-lg text-muted-foreground leading-relaxed md:text-xl">
+          I'm currently not available for new roles.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <ContactButtons />
+        </div>
+      </div>
+    </Section>
   );
 }
 
 function TextTooltip(props: { text: string; description: string }) {
   return (
     <Tooltip>
-      <TooltipTrigger className="underline decoration-3 decoration-dotted underline-offset-4">
+      <TooltipTrigger className="cursor-help underline decoration-2 decoration-primary decoration-dotted underline-offset-4">
         {props.text}
       </TooltipTrigger>
       <TooltipContent>{props.description}</TooltipContent>
@@ -265,27 +358,21 @@ function TextTooltip(props: { text: string; description: string }) {
 
 function Experience(props: PropsWithChildren<{ company: string; position: string; time: string }>) {
   return (
-    <>
-      <div className="flex flex-col">
-        <h4 className="font-bold">{props.position}</h4>
-        <div className="items-baseline-last flex flex-1 justify-between gap-4">
-          <span className="text-muted-foreground">{props.company}</span>
-          <time className="text-nowrap text-right text-muted-foreground text-sm">{props.time}</time>
+    <article className="grid grid-cols-1 gap-3 border-t py-10 md:grid-cols-12 md:gap-8">
+      <div className="md:col-span-3">
+        <div className="md:sticky md:top-24">
+          <time className="block font-mono text-muted-foreground text-sm">{props.time}</time>
+          <p className="mt-1 font-mono font-semibold">{props.company}</p>
         </div>
       </div>
-      {props.children}
-    </>
-  );
-}
-
-function Technology(props: { name: string; description: string; logo: ReactNode }) {
-  return (
-    <div className="flex items-center gap-4 border-2 border-border px-2 py-4">
-      <div className="w-16">{props.logo}</div>
-      <div className="flex flex-col items-start">
-        <span>{props.name}</span>
-        <span className="text-muted-foreground text-sm">{props.description}</span>
+      <div className="md:col-span-9">
+        <h3 className="font-mono font-semibold text-xl">{props.position}</h3>
+        {props.children && (
+          <div className="mt-4 space-y-5 leading-relaxed [&_li]:relative [&_li]:pl-5 [&_li]:before:absolute [&_li]:before:top-[0.6em] [&_li]:before:left-0 [&_li]:before:size-1.5 [&_li]:before:bg-primary [&_p]:max-w-[65ch] [&_ul]:grid [&_ul]:gap-x-10 [&_ul]:gap-y-3 lg:[&_ul]:grid-cols-2">
+            {props.children}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 }
